@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>VI One 앱 받기</title>
+<link rel="canonical" href="https://rigidpointadvisory.com/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<style>
+:root{--navy:#0D1B3D;--blue:#50AAEE}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  background:radial-gradient(120% 90% at 50% 0%,#1b2350 0%,#0B1024 55%,#06091a 100%);color:#fff;
+  min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;word-break:keep-all}
+.mark{width:76px;height:76px;border-radius:20px;margin:0 auto 22px;display:block}
+h1{font-size:30px;font-weight:800;letter-spacing:-.6px}
+p{margin-top:12px;opacity:.82;font-size:16px;line-height:1.6}
+.btn{display:inline-block;margin-top:26px;background:#fff;color:var(--navy);font-weight:700;font-size:16px;
+  padding:14px 26px;border-radius:14px;text-decoration:none}
+.sub{margin-top:18px;font-size:14px;opacity:.6}
+.sub a{color:var(--blue)}
+</style>
+<script>
+(function () {
+  var IOS = 'https://apps.apple.com/app/id6774170446';          // 스토어가 방문자 국가로 자동 전환됩니다
+  var AND = '';                                                  // 안드로이드 출시 후 Google Play URL 입력
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var isAnd = /Android/i.test(ua);
+  var url = isIOS ? IOS : (isAnd ? (AND || 'https://rigidpointadvisory.com/') : IOS);
+  location.replace(url);
+})();
+</script></head>
+<body><div>
+  <img class="mark" src="/assets/img/app-icon.svg" alt="VI One">
+  <h1>VI One</h1>
+  <p>App Store로 이동합니다…</p>
+  <a class="btn" href="https://apps.apple.com/app/id6774170446">App Store에서 받기</a>
+  <div class="sub">자동으로 열리지 않으면 위 버튼을 누르세요 · <a href="https://rigidpointadvisory.com/">Rigid Point Advisory</a></div>
+</div></body></html>

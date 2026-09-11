@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /app
+
+User-agent: Bytespider
+Disallow: /
+
+Sitemap: https://rigidpointadvisory.com/sitemap.xml

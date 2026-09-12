@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>내 매장 — VI One</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --navy:#0D1B3D; --ink:#16203A; --mid:#5B6780; --line:#E3E8F2; --bg:#fff; --soft:#F5F7FC;
+  --blue:#2C7FD4; --blue2:#7EC8F8; --violet:#6B2FCC; --green:#1C9E45; --amber:#C77700; --red:#C6342B;
+  --grad:linear-gradient(135deg,#0D1B3D 0%,#3A2A8C 55%,#6B2FCC 100%);
+  --wrap:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Pretendard Variable","Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  color:var(--ink);background:var(--soft);line-height:1.65;font-size:16px;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+h1,h2,h3{letter-spacing:-.6px;line-height:1.3;font-weight:800}
+
+/* ---------- login ---------- */
+#login{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--grad)}
+.loginbox{width:100%;max-width:400px;background:#fff;border-radius:20px;padding:38px 32px 30px;box-shadow:0 24px 60px rgba(13,27,61,.3)}
+.loginbox .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px}
+.loginbox .brand img{width:32px;height:32px;border-radius:9px}
+.loginbox h1{font-size:23px;margin-top:20px}
+.loginbox .sub{color:var(--mid);font-size:15px;margin-top:8px}
+label{display:block;font-size:14px;font-weight:700;margin:18px 0 7px}
+input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:11px;font:inherit;font-size:16px;background:#fff}
+input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(44,127,212,.14)}
+.sbtn{width:100%;margin-top:22px;padding:14px;border:0;border-radius:12px;background:var(--navy);color:#fff;
+  font:inherit;font-weight:700;font-size:16px;cursor:pointer}
+.sbtn:disabled{opacity:.55;cursor:default}
+.msg{margin-top:14px;font-size:14.5px;padding:11px 13px;border-radius:10px;display:none}
+.msg.err{display:block;background:#FDECEA;color:var(--red)}
+.msg.ok{display:block;background:#E9F6EC;color:var(--green)}
+.linkrow{margin-top:16px;display:flex;justify-content:space-between;font-size:14px;color:var(--mid);gap:12px}
+.linkrow a{color:var(--blue);font-weight:600;text-decoration:none;cursor:pointer}
+.loginfoot{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--mid)}
+.loginfoot a{color:var(--blue);font-weight:600;text-decoration:none}
+
+/* ---------- app ---------- */
+#app{display:none}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+header .wrap{display:flex;align-items:center;gap:12px;height:62px}
+header .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;text-decoration:none}
+header .brand img{width:28px;height:28px;border-radius:8px}
+header .sp{flex:1}
+.plan{font-size:12.5px;font-weight:800;padding:5px 11px;border-radius:999px;letter-spacing:.02em}
+.plan.pro{background:#EDE4FF;color:var(--violet)}
+.plan.starter{background:#EEF1F7;color:var(--mid)}
+.out{background:none;border:1px solid var(--line);border-radius:9px;padding:7px 13px;font:inherit;font-size:14px;
+  font-weight:600;color:var(--mid);cursor:pointer}
+
+.shophead{padding:28px 0 6px}
+.shophead h1{font-size:clamp(22px,3.6vw,29px)}
+.shophead .meta{color:var(--mid);font-size:14.5px;margin-top:7px;display:flex;flex-wrap:wrap;gap:4px 16px}
+.ro{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13.5px;color:var(--mid);
+  background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+
+.tiles{display:grid;gap:12px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(158px,1fr))}
+.tile{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px 18px 16px}
+.tile .t{font-size:13.5px;color:var(--mid);font-weight:600}
+.tile .v{font-size:27px;font-weight:800;letter-spacing:-1px;margin-top:6px;line-height:1.2}
+.tile .v small{font-size:15px;font-weight:700;margin-left:2px;letter-spacing:0}
+.tile.hl .v{color:var(--blue)}
+.tile.warn .v{color:var(--amber)}
+
+section.blk{background:#fff;border:1px solid var(--line);border-radius:16px;margin-top:16px;overflow:hidden}
+section.blk > h2{font-size:16.5px;padding:18px 20px 14px;display:flex;align-items:center;gap:9px}
+section.blk > h2 .n{font-size:13px;font-weight:700;color:var(--mid);background:var(--soft);border-radius:999px;padding:2px 9px}
+.tblwrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-size:13px;color:var(--mid);font-weight:700;padding:9px 20px;background:var(--soft);white-space:nowrap}
+td{padding:13px 20px;border-top:1px solid var(--line);vertical-align:top}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td .sm{display:block;color:var(--mid);font-size:13.5px;margin-top:2px}
+.empty{padding:26px 20px;color:var(--mid);font-size:15px}
+
+.chip{display:inline-block;font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 9px;margin:0 4px 3px 0;background:#EEF1F7;color:var(--mid);white-space:nowrap}
+.chip.vip{background:#F3E8FF;color:var(--violet)}
+.chip.reg{background:#E9F6EC;color:var(--green)}
+.chip.new{background:#E8F2FE;color:var(--blue)}
+.chip.risk{background:#FDECEA;color:var(--red)}
+.st{font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap;display:inline-block}
+.st.pending{background:#FFF3E0;color:var(--amber)}
+.st.confirmed{background:#E8F2FE;color:var(--blue)}
+.st.completed{background:#E9F6EC;color:var(--green)}
+.st.cancelled{background:#EEF1F7;color:var(--mid)}
+.st.noshow{background:#FDECEA;color:var(--red)}
+
+.lock{padding:24px 20px;background:linear-gradient(135deg,#F7F3FF,#EEF4FE);border-top:1px solid var(--line)}
+.lock h3{font-size:16px}
+.lock p{color:var(--mid);font-size:15px;margin-top:7px;max-width:560px}
+.lock a{display:inline-flex;align-items:center;gap:8px;margin-top:15px;background:#000;color:#fff;text-decoration:none;
+  border-radius:11px;padding:11px 18px;font-weight:700;font-size:15px}
+
+.kv{display:grid;grid-template-columns:130px 1fr;gap:11px 16px;padding:18px 20px;font-size:15px}
+.kv dt{color:var(--mid);font-weight:600}
+@media(max-width:560px){.kv{grid-template-columns:1fr;gap:3px 0}.kv dd{margin-bottom:11px}}
+
+footer{padding:30px 0 54px;color:var(--mid);font-size:13.5px;text-align:center}
+footer a{color:var(--blue);text-decoration:none}
+.skel{color:var(--mid);font-size:15px;padding:26px 20px}
+</style>
+</head>
+<body>
+
+<!-- ================= LOGIN ================= -->
+<div id="login">
+  <div class="loginbox">
+    <div class="brand"><img src="/assets/img/app-icon.svg" alt=""><span>VI One</span></div>
+    <h1>내 매장 보기</h1>
+    <p class="sub">VI One 앱에서 쓰시는 계정으로 로그인하세요. 예약, 고객, 매출을 웹에서도 확인할 수 있습니다.</p>
+
+    <label for="em">이메일</label>
+    <input id="em" type="email" autocomplete="username" inputmode="email" placeholder="shop@example.com">
+
+    <label for="pw">비밀번호</label>
+    <input id="pw" type="password" autocomplete="current-password" placeholder="••••••••">
+
+    <button class="sbtn" id="go">로그인</button>
+    <div class="msg" id="lmsg"></div>
+
+    <div class="linkrow">
+      <a id="reset">비밀번호를 잊으셨나요?</a>
+      <span>계정은 앱에서 만듭니다</span>
+    </div>
+
+    <div class="loginfoot">
+      아직 VI One을 안 쓰시나요? <a href="/app">App Store에서 받기 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= DASHBOARD ================= -->
+<div id="app">
+  <header><div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/app-icon.svg" alt=""><span>VI One</span></a>
+    <span class="sp"></span>
+    <span class="plan starter" id="planBadge">Starter</span>
+    <button class="out" id="logout">로그아웃</button>
+  </div></header>
+
+  <div class="wrap">
+    <div class="shophead">
+      <h1 id="shopName">매장</h1>
+      <div class="meta" id="shopMeta"></div>
+      <span class="ro">조회 전용 · 수정은 앱에서</span>
+    </div>
+
+    <div class="tiles" id="tiles"></div>
+
+    <section class="blk">
+      <h2>다가오는 예약 <span class="n" id="nResv">—</span></h2>
+      <div id="resvBody"><div class="skel">불러오는 중…</div></div>
+    </section>
+
+    <section class="blk">
+      <h2>고객 <span class="n" id="nCust">—</span></h2>
+      <div id="custBody"><div class="skel">불러오는 중…</div></div>
+    </section>
+
+    <section class="blk">
+      <h2>매출 내역 <span class="n" id="nPos">—</span></h2>
+      <div id="posBody"><div class="skel">불러오는 중…</div></div>
+    </section>
+
+    <section class="blk">
+      <h2>AI 응대 <span class="n" id="nAgent">—</span></h2>
+      <div id="agentBody"><div class="skel">불러오는 중…</div></div>
+    </section>
+
+    <section class="blk">
+      <h2>소통 기록 <span class="n" id="nConv">—</span></h2>
+      <div id="convBody"><div class="skel">불러오는 중…</div></div>
+    </section>
+
+    <section class="blk">
+      <h2>매장 정보</h2>
+      <div id="infoBody"><div class="skel">불러오는 중…</div></div>
+    </section>
+
+    <footer>
+      VI One · Rigid Point Advisory · 문의 <a href="mailto:hellosangwoo@gmail.com">hellosangwoo@gmail.com</a>
+    </footer>
+  </div>
+</div>
+
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const SUPABASE_URL = 'https://awnumaschuictuclucmt.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_JPdIb72UcP7lZfmOtFXflg_GFMh_0tT';
+const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const won = n => (Number(n)||0).toLocaleString('ko-KR');
+const KO = { weekday:'short', month:'numeric', day:'numeric' };
+
+function dt(v){ if(!v) return '—'; const d=new Date(v);
+  return d.toLocaleDateString('ko-KR',KO)+' '+d.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'}); }
+function day(v){ if(!v) return '—'; return new Date(v).toLocaleDateString('ko-KR',{year:'2-digit',month:'2-digit',day:'2-digit'}); }
+
+const ST = { pending:['대기','pending'], requested:['요청','pending'], confirmed:['확정','confirmed'],
+  completed:['완료','completed'], done:['완료','completed'], cancelled:['취소','cancelled'],
+  canceled:['취소','cancelled'], no_show:['노쇼','noshow'], noshow:['노쇼','noshow'] };
+function stChip(s){ const k=String(s||'').toLowerCase(); const m=ST[k]||[s||'—','cancelled'];
+  return `<span class="st ${m[1]}">${esc(m[0])}</span>`; }
+
+const TAG = { VIP:'vip', vip:'vip', '단골':'reg', '신규':'new', '주의':'risk', '노쇼':'risk' };
+function tagChips(tags){ if(!tags||!tags.length) return '';
+  return tags.map(t=>`<span class="chip ${TAG[t]||''}">${esc(t)}</span>`).join(''); }
+
+function table(head, rows){
+  if(!rows.length) return null;
+  return `<div class="tblwrap"><table><thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead>
+    <tbody>${rows.join('')}</tbody></table></div>`;
+}
+function fill(el, html, emptyMsg){ $(el).innerHTML = html || `<div class="empty">${emptyMsg}</div>`; }
+
+/* ---------------- auth ---------------- */
+function showMsg(t, kind){ const m=$('lmsg'); m.textContent=t; m.className='msg '+kind; }
+
+$('go').addEventListener('click', signIn);
+$('pw').addEventListener('keydown', e => { if(e.key==='Enter') signIn(); });
+$('em').addEventListener('keydown', e => { if(e.key==='Enter') $('pw').focus(); });
+
+async function signIn(){
+  const email = $('em').value.trim(), password = $('pw').value;
+  if(!email || !password){ showMsg('이메일과 비밀번호를 입력해 주세요.','err'); return; }
+  $('go').disabled = true; $('go').textContent = '로그인 중…';
+  const { error } = await sb.auth.signInWithPassword({ email, password });
+  $('go').disabled = false; $('go').textContent = '로그인';
+  if(error){
+    showMsg(/Invalid login/i.test(error.message) ? '이메일 또는 비밀번호가 맞지 않습니다.' : error.message, 'err');
+    return;
+  }
+  boot();
+}
+
+$('reset').addEventListener('click', async () => {
+  const email = $('em').value.trim();
+  if(!email){ showMsg('이메일을 먼저 입력해 주세요.','err'); return; }
+  const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: location.origin + '/store/' });
+  showMsg(error ? error.message : '재설정 메일을 보냈습니다. 메일함을 확인해 주세요.', error ? 'err' : 'ok');
+});
+
+$('logout').addEventListener('click', async () => { await sb.auth.signOut(); location.reload(); });
+
+/* ---------------- boot ---------------- */
+const now = new Date();
+const startToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+const endToday = new Date(startToday.getTime() + 864e5);
+const startMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+
+async function boot(){
+  const { data:{ user } } = await sb.auth.getUser();
+  if(!user) return;
+  $('login').style.display = 'none';
+  $('app').style.display = 'block';
+  const uid = user.id;
+
+  const [settings, sub, resv, todayResv, cust, custCount, pos, agent, conv, faq] = await Promise.all([
+    sb.from('settings').select('*').eq('owner_id',uid).maybeSingle(),
+    sb.from('subscriptions').select('*').eq('owner_id',uid).maybeSingle(),
+    sb.from('reservations').select('*, customers(name,phone)').eq('owner_id',uid)
+      .gte('scheduled_at', startToday.toISOString()).order('scheduled_at',{ascending:true}).limit(30),
+    sb.from('reservations').select('id,status,no_show', {count:'exact'}).eq('owner_id',uid)
+      .gte('scheduled_at', startToday.toISOString()).lt('scheduled_at', endToday.toISOString()),
+    sb.from('customers').select('*').eq('owner_id',uid)
+      .order('last_visit_date',{ascending:false,nullsFirst:false}).limit(50),
+    sb.from('customers').select('id',{count:'exact',head:true}).eq('owner_id',uid),
+    sb.from('pos_transactions').select('*').eq('owner_id',uid)
+      .gte('transaction_date', startMonth.toISOString()).order('transaction_date',{ascending:false}).limit(50),
+    sb.from('agent_conversations').select('*').eq('owner_id',uid)
+      .order('last_message_at',{ascending:false}).limit(15),
+    sb.from('conversations').select('*, customers(name)').eq('owner_id',uid)
+      .order('created_at',{ascending:false}).limit(15),
+    sb.from('ai_faq').select('id,intent,enabled').eq('owner_id',uid)
+  ]);
+
+  const s = settings.data || {};
+  const plan = (sub.data?.tier || s.plan || 'starter').toLowerCase();
+  const isPro = plan.includes('pro');
+
+  /* header */
+  $('shopName').textContent = s.name || '매장 이름 미설정';
+  const meta = [];
+  if(s.category) meta.push(esc(s.category));
+  if(s.phone) meta.push(esc(s.phone));
+  if(s.address) meta.push(esc(s.address));
+  $('shopMeta').innerHTML = meta.map(m=>`<span>${m}</span>`).join('') || '<span>앱에서 매장 정보를 설정해 주세요</span>';
+  const pb = $('planBadge');
+  pb.textContent = isPro ? 'Pro' : 'Starter';
+  pb.className = 'plan ' + (isPro ? 'pro' : 'starter');
+
+  /* tiles */
+  const tResv = todayResv.data || [];
+  const pending = tResv.filter(r => ['pending','requested'].includes(String(r.status||'').toLowerCase())).length;
+  const noshow = tResv.filter(r => r.no_show).length;
+  const posRows = pos.data || [];
+  const monthSum = posRows
+    .filter(t => !['cancelled','canceled','refunded','voided'].includes(String(t.status||'').toLowerCase()))
+    .reduce((a,t) => a + (Number(t.total_amount)||0), 0);
+  const agentRows = agent.data || [];
+  const escalated = agentRows.filter(a => a.is_escalated).length;
+
+  $('tiles').innerHTML = [
+    ['오늘 예약', tResv.length + '<small>건</small>', ''],
+    ['대기중 요청', pending + '<small>건</small>', pending ? 'warn' : ''],
+    ['이번 달 매출', won(monthSum) + '<small>원</small>', 'hl'],
+    ['전체 고객', (custCount.count ?? 0) + '<small>명</small>', ''],
+    ['오늘 노쇼', noshow + '<small>건</small>', noshow ? 'warn' : ''],
+    ['AI 응대', agentRows.length + '<small>건</small>', '']
+  ].map(([t,v,c]) => `<div class="tile ${c}"><div class="t">${t}</div><div class="v">${v}</div></div>`).join('');
+
+  /* reservations */
+  const rRows = (resv.data||[]).map(r => `<tr>
+    <td><b>${esc(dt(r.scheduled_at))}</b><span class="sm">${esc(r.duration_min||60)}분</span></td>
+    <td>${esc(r.customers?.name || '이름 없음')}<span class="sm">${esc(r.customers?.phone || '')}</span></td>
+    <td>${esc(r.service_name || '—')}</td>
+    <td>${stChip(r.no_show ? 'no_show' : r.status)}</td>
+  </tr>`);
+  $('nResv').textContent = (resv.data||[]).length;
+  fill('resvBody', table(['일시','고객','서비스','상태'], rRows), '다가오는 예약이 없습니다.');
+
+  /* customers */
+  const cRows = (cust.data||[]).map(c => `<tr>
+    <td><b>${esc(c.name)}</b><span class="sm">${esc(c.phone||'')}</span></td>
+    <td>${tagChips(c.tags) || '<span class="sm">—</span>'}</td>
+    <td class="num">${esc(c.total_visits||0)}회</td>
+    <td class="num">${won(c.total_spend)}원</td>
+    <td class="num">${esc(day(c.last_visit_date))}</td>
+  </tr>`);
+  $('nCust').textContent = custCount.count ?? 0;
+  fill('custBody', table(['고객','태그','방문','누적 결제','최근 방문'], cRows), '등록된 고객이 없습니다.');
+
+  /* sales */
+  const pRows = posRows.map(t => `<tr>
+    <td>${esc(dt(t.transaction_date))}</td>
+    <td>${esc(t.staff_name || t.location_name || (t.source==='manual' ? '간편 기록' : 'POS'))}</td>
+    <td>${esc(t.payment_method||'—')}</td>
+    <td class="num"><b>${won(t.total_amount)}원</b></td>
+  </tr>`);
+  $('nPos').textContent = posRows.length;
+  fill('posBody', table(['일시','구분','결제수단','금액'], pRows),
+    '이번 달 매출 기록이 없습니다. 앱에서 간편 기록을 남기거나 POS를 연결해 보세요.');
+
+  /* AI */
+  if(isPro){
+    const aRows = agentRows.map(a => `<tr>
+      <td>${esc(dt(a.last_message_at || a.started_at))}</td>
+      <td>${esc(a.channel||'—')}</td>
+      <td>${esc(a.customer_name || a.customer_phone || '—')}</td>
+      <td>${esc(a.ai_summary || a.detected_intent || '—')}
+        ${a.is_escalated ? '<span class="sm" style="color:var(--amber)">사장님 확인 요청</span>' : ''}</td>
+    </tr>`);
+    const faqN = (faq.data||[]).filter(f => f.enabled !== false).length;
+    const head = `<div class="kv"><dt>등록된 FAQ</dt><dd>${faqN}개</dd>
+      <dt>자동응답</dt><dd>${s.ai_autoreply ? '켜짐' : '꺼짐'}</dd>
+      <dt>확인 요청</dt><dd>${escalated}건</dd></div>`;
+    $('nAgent').textContent = agentRows.length;
+    $('agentBody').innerHTML = head + (table(['일시','채널','고객','요약'], aRows) || '<div class="empty">AI 응대 기록이 없습니다.</div>');
+  } else {
+    $('nAgent').textContent = 'Pro';
+    $('agentBody').innerHTML = `<div class="lock">
+      <h3>AI FAQ 자동응대는 Pro 기능입니다</h3>
+      <p>주차, 영업시간, 예약처럼 자주 오는 질문에 AI가 매장 FAQ를 근거로 답을 씁니다.
+      모르는 질문은 지어내지 않고 사장님께 넘깁니다. 보내는 건 언제나 사장님이 확인한 뒤입니다.</p>
+      <a href="/app">App Store에서 Pro 시작하기</a>
+    </div>`;
+  }
+
+  /* conversations */
+  const vRows = (conv.data||[]).map(c => `<tr>
+    <td>${esc(dt(c.created_at))}</td>
+    <td>${esc(c.customers?.name || '—')}</td>
+    <td>${esc(c.ai_summary || c.summary || '—')}
+      ${c.follow_up ? `<span class="sm">후속: ${esc(c.follow_up)}</span>` : ''}</td>
+  </tr>`);
+  $('nConv').textContent = (conv.data||[]).length;
+  fill('convBody', table(['일시','고객','내용'], vRows), '소통 기록이 없습니다.');
+
+  /* shop info */
+  $('infoBody').innerHTML = `<dl class="kv">
+    <dt>매장명</dt><dd>${esc(s.name||'—')}</dd>
+    <dt>업종</dt><dd>${esc(s.category||'—')}</dd>
+    <dt>전화</dt><dd>${esc(s.phone||'—')}</dd>
+    <dt>주소</dt><dd>${esc(s.address||'—')}</dd>
+    <dt>영업시간</dt><dd>${esc(s.business_hours_text||'—')}</dd>
+    <dt>주차 안내</dt><dd>${esc(s.parking_info||'—')}</dd>
+    <dt>예약 링크</dt><dd>${s.booking_link ? `<a href="${esc(s.booking_link)}" target="_blank" rel="noopener">${esc(s.booking_link)}</a>` : '—'}</dd>
+    <dt>플랜</dt><dd>${isPro ? 'Pro' : 'Starter'}${sub.data?.expires_at ? ` · ${day(sub.data.expires_at)}까지` : ''}</dd>
+  </dl>`;
+}
+
+/* 이미 로그인된 세션이면 바로 대시보드 */
+sb.auth.getSession().then(({ data }) => { if(data.session) boot(); });
+</script>
+</body></html>

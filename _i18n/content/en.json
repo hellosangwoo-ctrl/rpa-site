@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "VI One — Salon CRM for Client Notes, Visits & Sales",
+    "description": "A salon CRM for solo beauty pros on iPhone. Every client's notes, photos, visits and spend on one card — plus a heads-up when a regular is overdue or quietly spending less. Free Starter.",
+    "ogDescription": "Every client's notes, photos, visits and spend on one card — plus a heads-up when a regular is overdue or quietly spending less."
+  },
+  "schema": {
+    "org": "A Seoul-based IT consultancy building enterprise software and AI solutions, and shipping its own products.",
+    "appName": "VI One: Salon CRM & Clients",
+    "appDesc": "A salon CRM for solo beauty pros. Every client's notes, photos, visits and spend on one card, automatic New/Regular/VIP/At-risk tiers, win-back and average-ticket alerts, an appointment book, a sales tracker and AI summaries of recorded client calls."
+  },
+  "nav": { "what": "What it does", "pricing": "Pricing", "getApp": "Get the app", "getAppAria": "Download VI One on the App Store", "contact": "Contact" },
+  "hero": {
+    "kick": "VI One · by Rigid Point Advisory",
+    "h1": "Every client's notes, visits <br>and spend — <em>on one card</em>",
+    "sub": "VI One is a salon CRM for solo beauty pros. Your client book, your appointment book and your sales tracker in one iPhone app — and a heads-up when a regular goes quiet or quietly starts spending less.",
+    "btnDownload": "Download on the App Store",
+    "btnSee": "See what it does",
+    "btnEmail": "Email the founder"
+  },
+  "what": {
+    "eyebrow": "What it does",
+    "h2": "The client book that keeps itself",
+    "lead": "You are the front desk, the artist and the bookkeeper. VI One takes the remembering.",
+    "cards": [
+      { "icon": "🗂️", "h3": "One card per client", "p": "Notes, photos, phone, Instagram handle and the full visit history on a single client profile. Write it once; it stays current." },
+      { "icon": "🏅", "h3": "Tiers that update themselves", "p": "New, Regular, VIP and At risk are set from real visits and real spend — not from a tag you meant to add three months ago." },
+      { "icon": "⏳", "h3": "A heads-up before they drift", "p": "VI One learns each client's own rhythm. When someone who books every four weeks reaches week seven, you hear about it while a message still works." },
+      { "icon": "📉", "h3": "Spending less, quietly", "p": "The client who still comes in but books the cheaper service. VI One watches average ticket per client and flags the slide before it becomes a goodbye." },
+      { "icon": "📅", "h3": "Appointment book", "p": "Your own menu and your own prices. Request → confirmed → done, with no-shows recorded against the client so the pattern is visible." },
+      { "icon": "💵", "h3": "Sales and revenue", "p": "Log a sale in seconds. Per-client totals and this month's revenue, without opening a spreadsheet at midnight." },
+      { "icon": "🎙️", "h3": "Call notes, written for you", "p": "Record a client call and VI One writes the summary and the keywords onto their card — so \"she wants to move her fill to Saturday\" is still there next month.", "note": "Record calls only where you are permitted to and with everyone's knowledge." },
+      { "icon": "📸", "h3": "Instagram DM in one tap", "p": "Most new clients find you there. Open a client's DM thread straight from their card instead of hunting the handle." }
+    ]
+  },
+  "look": {
+    "eyebrow": "A look inside",
+    "h2": "Built for a one-chair studio, not a call center",
+    "lead": "Open the app and the day is already sorted: who is coming, who has gone quiet, and what the month looks like so far.",
+    "feats": [
+      { "b": "Dashboard", "t": "— today's bookings, this month's revenue and no-shows, and the one thing worth doing right now" },
+      { "b": "Win-back list", "t": "— lapsed and at-risk clients, each with how long they usually wait and what they usually spend" },
+      { "b": "Client card", "t": "— notes, visits, every payment, call keywords and booking history in one scroll" },
+      { "b": "Monthly report", "t": "(Pro) — where the month's revenue came from and which clients moved" }
+    ],
+    "appbtnTop": "Download on the",
+    "alts": [
+      "VI One dashboard: today's bookings, monthly revenue and today's insight",
+      "VI One win-back list showing lapsed and at-risk clients",
+      "VI One client card with notes, spend, payments and booking history"
+    ],
+    "shotcap": "Sample studio data shown."
+  },
+  "whoFor": {
+    "eyebrow": "Who it's for",
+    "h2": "If you keep the client book in your head",
+    "lead": "VI One was built for one person running the whole chair — and for small studios where everyone still knows every client by name.",
+    "pills": ["Lash techs", "Nail techs", "Brow artists", "Hair stylists", "Tattoo artists", "Estheticians", "Barbers", "Small studios"]
+  },
+  "honest": {
+    "eyebrow": "Before you download",
+    "h2": "What VI One does not do in the US",
+    "lead": "Some of what VI One does in Korea is not switched on here yet. You should know that before you download, not after.",
+    "items": [
+      { "b": "It is not a POS.", "t": "VI One records what you were paid and what for. It does not take the payment or touch your card processor." },
+      { "b": "Automatic text reminders are not live in the US.", "t": "They run in Korea today. US texting needs a carrier-verified number, which is in progress — until it is done, you send reminders yourself." },
+      { "b": "No AI auto-reply yet.", "t": "The AI that answers repeat questions needs an inbound number we do not have in the US yet. The AI that summarizes your recorded calls works today." },
+      { "b": "No KakaoTalk.", "t": "That is a Korean messaging channel. It is simply not on your screen here." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "h2": "Start free. Stay free until Pro is worth it.",
+    "lead": "No trial countdown and no card to start — Starter is the whole client book, permanently free.",
+    "starter": {
+      "name": "Starter", "amt": "Free",
+      "items": ["Unlimited client cards with notes and photos", "Automatic New / Regular / VIP / At risk tiers", "Win-back and average-ticket alerts", "Appointment book with your own menu", "Quick sales log and monthly revenue", "AI call summaries and keywords", "Instagram DM deep link"],
+      "fine": "This is the honest pick in the US today — everything above works right now."
+    },
+    "pro": {
+      "name": "Pro", "amt": "Paid", "amtSmall": "monthly or yearly",
+      "items": ["Everything in Starter", "Monthly business report", "Automatic reminders — Korea only for now", "AI FAQ auto-reply — Korea only for now"],
+      "fine": "Two of the four Pro features are not switched on in the US yet, so in the US Pro adds the monthly report and little else. Current price is shown in the App Store. We will update this page the day that changes."
+    }
+  },
+  "who": {
+    "eyebrow": "Who builds it",
+    "h2": "One person you can actually email",
+    "name": "Sangwoo Park", "role": "Founder, Rigid Point Advisory", "place": "Seoul, Korea",
+    "p1": "Twelve years planning, selling and delivering enterprise software for global companies, on large accounts in Korea, Singapore and the United States. VI One is that work pointed at a one-chair studio instead of a boardroom: designed, built, shipped and supported by the same person. It is on the App Store, not in a slide deck.",
+    "p2": "Rigid Point Advisory also does what it did before VI One — enterprise software consulting and AI solution design for companies that need something delivered rather than described."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "h2": "Talk to the person who built it",
+    "lead": "A question, a bug, or something your studio needs that VI One does not do yet — write to me directly. I read every message and usually answer the same day, Seoul time.",
+    "appLink": "Download VI One on the App Store"
+  },
+  "footer": { "tagline": "IT consulting · AI solutions", "founder": "Sangwoo Park, Founder", "bizLabel": "Business Registration", "place": "Seoul, Korea" }
+}

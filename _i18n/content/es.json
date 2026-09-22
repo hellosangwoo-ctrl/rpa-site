@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "VI One — CRM de salón para fichas, visitas y ventas",
+    "description": "CRM para iPhone hecho para profesionales de belleza que trabajan solas. Las notas, fotos, visitas y el gasto de cada cliente en una sola ficha, y un aviso cuando una clienta habitual se tarda o empieza a gastar menos sin decirlo. Starter gratis.",
+    "ogDescription": "Las notas, fotos, visitas y el gasto de cada cliente en una sola ficha, y un aviso cuando una clienta habitual se tarda o empieza a gastar menos sin decirlo."
+  },
+  "schema": {
+    "org": "Consultora de TI con sede en Seúl que desarrolla software empresarial y soluciones de IA, y publica sus propios productos.",
+    "appName": "VI One: CRM y fichas de salón",
+    "appDesc": "CRM de salón para profesionales de belleza que trabajan solas. Notas, fotos, visitas y gasto de cada cliente en una ficha, niveles automáticos Nueva/Habitual/VIP/En riesgo, avisos de reactivación y de caída del ticket promedio, agenda de citas, registro de ventas y resúmenes con IA de las llamadas grabadas."
+  },
+  "nav": { "what": "Qué hace", "pricing": "Precios", "getApp": "Descargar", "getAppAria": "Descargar VI One en el App Store", "contact": "Contacto" },
+  "hero": {
+    "kick": "VI One · de Rigid Point Advisory",
+    "h1": "Notas, visitas y gasto de <br>cada cliente — <em>en una sola ficha</em>",
+    "sub": "VI One es un CRM de salón para quienes atienden solas. Tu libreta de clientes, tu agenda de citas y tu registro de ventas en una app de iPhone — y un aviso cuando una clienta habitual se queda callada o empieza a gastar menos.",
+    "btnDownload": "Descargar en el App Store",
+    "btnSee": "Ver qué hace",
+    "btnEmail": "Escribir al fundador"
+  },
+  "what": {
+    "eyebrow": "Qué hace",
+    "h2": "La libreta de clientes que se mantiene sola",
+    "lead": "Tú eres la recepción, la artista y la contabilidad. Acordarse queda de cuenta de VI One.",
+    "cards": [
+      { "icon": "🗂️", "h3": "Una ficha por cliente", "p": "Notas, fotos, teléfono, Instagram y todo el historial de visitas en un solo perfil. Lo escribes una vez y se mantiene al día." },
+      { "icon": "🏅", "h3": "Niveles que se actualizan solos", "p": "Nueva, Habitual, VIP y En riesgo salen de las visitas y del gasto reales, no de una etiqueta que pensabas poner hace tres meses." },
+      { "icon": "⏳", "h3": "Te enteras antes de que se vaya", "p": "VI One aprende el ritmo de cada cliente. Si alguien que viene cada cuatro semanas llega a la séptima, te avisa cuando un mensaje todavía sirve." },
+      { "icon": "📉", "h3": "Gasta menos y no lo dice", "p": "La clienta que sigue viniendo pero pide el servicio más barato. VI One vigila el ticket promedio de cada una y marca la caída antes de que se convierta en una despedida." },
+      { "icon": "📅", "h3": "Agenda de citas", "p": "Con tu propio menú y tus propios precios. Solicitud → confirmada → hecha, y las inasistencias quedan en la ficha para que el patrón se vea." },
+      { "icon": "💵", "h3": "Ventas e ingresos", "p": "Registrar una venta toma segundos. Totales por cliente y los ingresos del mes, sin abrir una hoja de cálculo a medianoche." },
+      { "icon": "🎙️", "h3": "Notas de llamada, escritas por ti", "p": "Graba una llamada y VI One escribe el resumen y las palabras clave en la ficha — para que el mes que viene siga ahí que quiere mover su relleno al sábado.", "note": "Graba llamadas solo donde esté permitido y con el conocimiento de todas las personas." },
+      { "icon": "📸", "h3": "DM de Instagram en un toque", "p": "Ahí es donde te encuentran casi todas las clientas nuevas. Abre su conversación directo desde la ficha, sin buscar el usuario otra vez." }
+    ]
+  },
+  "look": {
+    "eyebrow": "Por dentro",
+    "h2": "Hecho para un salón de una silla, no para un call center",
+    "lead": "Abres la app y el día ya está ordenado: quién viene, quién se quedó callada y cómo va el mes hasta ahora.",
+    "feats": [
+      { "b": "Panel", "t": "— las citas de hoy, los ingresos y las inasistencias del mes, y lo único que vale la pena hacer ahora mismo" },
+      { "b": "Lista de reactivación", "t": "— clientas ausentes y en riesgo, cada una con cuánto suele tardar y cuánto suele gastar" },
+      { "b": "Ficha de cliente", "t": "— notas, visitas, cada pago, palabras clave de las llamadas y el historial de citas de un solo scroll" },
+      { "b": "Reporte mensual", "t": "(Pro) — de dónde vinieron los ingresos del mes y qué clientas se movieron" }
+    ],
+    "appbtnTop": "Descargar en el",
+    "alts": [
+      "Panel de VI One: citas de hoy, ingresos del mes y el aviso del día",
+      "Lista de reactivación de VI One con clientas ausentes y en riesgo",
+      "Ficha de cliente de VI One con notas, gasto, pagos e historial de citas"
+    ],
+    "shotcap": "Las capturas usan datos de ejemplo."
+  },
+  "whoFor": {
+    "eyebrow": "Para quién es",
+    "h2": "Si la libreta de clientes la llevas en la cabeza",
+    "lead": "VI One está hecho para quien lleva sola toda la silla — y para salones pequeños donde todavía se sabe el nombre de cada clienta.",
+    "pills": ["Lashistas", "Manicuristas", "Especialistas en cejas", "Estilistas", "Tatuadores", "Esteticistas", "Barberos", "Salones pequeños"]
+  },
+  "honest": {
+    "eyebrow": "Antes de descargar",
+    "h2": "Lo que VI One no hace en Estados Unidos",
+    "lead": "Parte de lo que VI One hace en Corea todavía no está activo aquí. Es mejor que lo sepas antes de descargar, no después.",
+    "items": [
+      { "b": "No es un punto de venta.", "t": "VI One registra cuánto te pagaron y por qué servicio. No cobra el pago ni toca tu terminal de tarjetas." },
+      { "b": "Los recordatorios automáticos por mensaje no están activos en EE. UU.", "t": "En Corea sí funcionan. Enviar mensajes en EE. UU. exige un número verificado por las operadoras, y ese trámite está en curso — hasta que termine, los recordatorios los mandas tú." },
+      { "b": "Todavía no hay respuestas automáticas con IA.", "t": "La IA que contesta preguntas repetidas necesita un número de entrada que aún no tenemos en EE. UU. La IA que resume tus llamadas grabadas ya funciona hoy." },
+      { "b": "No hay KakaoTalk.", "t": "Es un canal de mensajería coreano. Aquí simplemente no aparece en tu pantalla." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Precios",
+    "h2": "Empieza gratis. Sigue gratis hasta que Pro valga la pena.",
+    "lead": "Sin cuenta regresiva de prueba y sin tarjeta para empezar — Starter es la libreta de clientes completa, gratis y sin vencimiento.",
+    "starter": {
+      "name": "Starter", "amt": "Gratis",
+      "items": ["Fichas de cliente ilimitadas, con notas y fotos", "Niveles automáticos Nueva / Habitual / VIP / En riesgo", "Avisos de reactivación y de caída del ticket promedio", "Agenda de citas con tu propio menú", "Registro rápido de ventas e ingresos del mes", "Resúmenes de llamadas con IA y palabras clave", "Enlace directo al DM de Instagram"],
+      "fine": "Hoy en EE. UU. esta es la opción honesta — todo lo de arriba funciona ahora mismo."
+    },
+    "pro": {
+      "name": "Pro", "amt": "De pago", "amtSmall": "mensual o anual",
+      "items": ["Todo lo de Starter", "Reporte mensual del negocio", "Recordatorios automáticos — por ahora solo en Corea", "Respuestas automáticas con IA — por ahora solo en Corea"],
+      "fine": "Dos de las cuatro funciones de Pro todavía no están activas en EE. UU., así que aquí Pro añade el reporte mensual y poco más. El precio vigente aparece en el App Store. El día que eso cambie, esta página cambia también."
+    }
+  },
+  "who": {
+    "eyebrow": "Quién lo hace",
+    "h2": "Una persona a la que de verdad puedes escribir",
+    "name": "Sangwoo Park", "role": "Fundador, Rigid Point Advisory", "place": "Seúl, Corea",
+    "p1": "Doce años planificando, vendiendo y entregando software empresarial para compañías globales, en cuentas grandes de Corea, Singapur y Estados Unidos. VI One es ese mismo trabajo apuntado a un salón de una silla en vez de a una sala de juntas: diseñado, programado, publicado y atendido por la misma persona. Está en el App Store, no en una presentación.",
+    "p2": "Rigid Point Advisory sigue haciendo lo que hacía antes de VI One — consultoría de software empresarial y diseño de soluciones de IA para empresas que necesitan algo entregado, no algo descrito."
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "h2": "Habla con quien lo construyó",
+    "lead": "Una duda, un error, o algo que tu salón necesita y VI One todavía no hace — escríbeme directo. Leo todos los mensajes y casi siempre contesto el mismo día, hora de Seúl.",
+    "appLink": "Descargar VI One en el App Store"
+  },
+  "footer": { "tagline": "Consultoría de TI · Soluciones de IA", "founder": "Sangwoo Park, Fundador", "bizLabel": "Registro mercantil", "place": "Seúl, Corea" }
+}

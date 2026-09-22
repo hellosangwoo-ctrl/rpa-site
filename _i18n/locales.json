@@ -1,0 +1,14 @@
+{
+  "site": "https://rigidpointadvisory.com",
+  "defaultLocale": "ko",
+  "appStore": "https://apps.apple.com/us/app/id6774170446",
+  "email": "hellosangwoo@gmail.com",
+  "bizNo": "595-08-03684",
+  "locales": [
+    { "code": "ko", "native": "한국어",      "htmlLang": "ko",    "ogLocale": "ko_KR", "path": "/",     "source": "handwritten", "file": "index.html",    "match": ["ko"] },
+    { "code": "en", "native": "English",     "htmlLang": "en",    "ogLocale": "en_US", "path": "/en/",  "source": "template",    "file": "en/index.html", "match": ["en"], "isDefaultForRest": true },
+    { "code": "vi", "native": "Tiếng Việt",  "htmlLang": "vi",    "ogLocale": "vi_VN", "path": "/vi/",  "source": "template",    "file": "vi/index.html", "match": ["vi"] },
+    { "code": "ja", "native": "日本語",       "htmlLang": "ja",    "ogLocale": "ja_JP", "path": "/ja/",  "source": "template",    "file": "ja/index.html", "match": ["ja"] },
+    { "code": "es", "native": "Español",     "htmlLang": "es",    "ogLocale": "es_US", "path": "/es/",  "source": "template",    "file": "es/index.html", "match": ["es"] }
+  ]
+}

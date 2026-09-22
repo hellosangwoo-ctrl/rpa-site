@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "VI One — Phần mềm quản lý khách cho tiệm nail và salon",
+    "description": "CRM trên iPhone dành cho thợ làm đẹp làm một mình. Ghi chú, hình, lượt ghé và số tiền của từng khách gọn trong một thẻ — kèm lời nhắc khi khách quen lâu chưa tới hoặc âm thầm xài ít lại. Bản Starter miễn phí.",
+    "ogDescription": "Ghi chú, hình, lượt ghé và số tiền của từng khách gọn trong một thẻ — kèm lời nhắc khi khách quen lâu chưa tới hoặc âm thầm xài ít lại."
+  },
+  "schema": {
+    "org": "Công ty tư vấn CNTT tại Seoul, làm phần mềm doanh nghiệp và giải pháp AI, đồng thời tự phát hành sản phẩm của mình.",
+    "appName": "VI One: Quản lý khách cho tiệm",
+    "appDesc": "Phần mềm quản lý khách dành cho thợ làm đẹp làm một mình. Ghi chú, hình, lượt ghé và chi tiêu của từng khách trong một thẻ, tự xếp hạng Mới/Khách quen/VIP/Có nguy cơ mất, nhắc kéo khách quay lại, cảnh báo tiền trung bình giảm, sổ hẹn, sổ doanh thu và AI tóm tắt cuộc gọi đã ghi âm."
+  },
+  "nav": { "what": "Làm được gì", "pricing": "Giá", "getApp": "Tải app", "getAppAria": "Tải VI One trên App Store", "contact": "Liên hệ" },
+  "hero": {
+    "kick": "VI One · của Rigid Point Advisory",
+    "h1": "Ghi chú, lượt ghé và tiền <br>của từng khách — <em>gọn trong một thẻ</em>",
+    "sub": "VI One là phần mềm quản lý khách cho thợ làm đẹp làm một mình. Sổ khách, sổ hẹn và sổ doanh thu nằm chung trong một app iPhone — và bạn được nhắc khi khách quen im lặng hoặc âm thầm xài ít lại.",
+    "btnDownload": "Tải trên App Store",
+    "btnSee": "Xem app làm được gì",
+    "btnEmail": "Email cho người làm ra app"
+  },
+  "what": {
+    "eyebrow": "Làm được gì",
+    "h2": "Sổ khách tự giữ mình gọn gàng",
+    "lead": "Bạn vừa tiếp khách, vừa làm nghề, vừa tính sổ. Phần phải nhớ, cứ để VI One lo.",
+    "cards": [
+      { "icon": "🗂️", "h3": "Mỗi khách một thẻ", "p": "Ghi chú, hình, số phone, Instagram và toàn bộ lượt ghé nằm trong một hồ sơ. Ghi một lần, về sau luôn đúng." },
+      { "icon": "🏅", "h3": "Hạng khách tự cập nhật", "p": "Mới, Khách quen, VIP và Có nguy cơ mất được tính từ lượt ghé và số tiền thật — không phải từ cái nhãn bạn định dán ba tháng trước." },
+      { "icon": "⏳", "h3": "Biết trước khi khách rời đi", "p": "VI One học nhịp riêng của từng khách. Người quen cứ bốn tuần một lần mà đã qua tuần thứ bảy, bạn được báo lúc nhắn tin vẫn còn kịp." },
+      { "icon": "📉", "h3": "Xài ít lại mà không nói gì", "p": "Khách vẫn tới nhưng chọn dịch vụ rẻ hơn. VI One theo dõi tiền trung bình mỗi lần của từng người và báo lúc con số bắt đầu tụt." },
+      { "icon": "📅", "h3": "Sổ hẹn", "p": "Theo đúng bảng dịch vụ và giá của bạn. Yêu cầu → đã nhận → đã xong, và lần hẹn rồi không tới được ghi vào hồ sơ khách để bạn thấy rõ thói quen." },
+      { "icon": "💵", "h3": "Doanh thu", "p": "Ghi một lần thu chỉ mất vài giây. Tổng tiền theo từng khách và doanh thu tháng này, khỏi mở Excel lúc nửa đêm." },
+      { "icon": "🎙️", "h3": "Ghi chú cuộc gọi, viết sẵn cho bạn", "p": "Ghi âm cuộc gọi của khách, VI One viết phần tóm tắt và từ khóa thẳng vào thẻ khách — để tháng sau \"cổ muốn dời buổi fill qua thứ Bảy\" vẫn còn nằm đó.", "note": "Chỉ ghi âm cuộc gọi ở nơi luật cho phép và khi mọi người đều biết." },
+      { "icon": "📸", "h3": "Nhắn Instagram một chạm", "p": "Khách mới phần lớn tìm bạn ở đó. Mở thẳng khung chat của khách từ thẻ của họ, khỏi đi lục lại tên tài khoản." }
+    ]
+  },
+  "look": {
+    "eyebrow": "Bên trong app",
+    "h2": "Làm cho tiệm một ghế, không phải cho tổng đài",
+    "lead": "Mở app ra là ngày hôm nay đã được sắp sẵn: ai sắp tới, ai lâu rồi chưa ghé, và tháng này đang tới đâu.",
+    "feats": [
+      { "b": "Màn hình chính", "t": "— lịch hẹn hôm nay, doanh thu và số lần khách không tới trong tháng, kèm việc đáng làm ngay lúc này" },
+      { "b": "Danh sách kéo khách lại", "t": "— khách đã lâu chưa ghé và khách có nguy cơ mất, kèm nhịp ghé và số tiền quen thuộc của từng người" },
+      { "b": "Thẻ khách", "t": "— ghi chú, lượt ghé, từng lần thanh toán, từ khóa cuộc gọi và lịch sử đặt hẹn trong một lần kéo" },
+      { "b": "Báo cáo tháng", "t": "(Pro) — tiền tháng này tới từ đâu và khách nào đã đổi nhịp" }
+    ],
+    "appbtnTop": "Tải trên",
+    "alts": [
+      "Màn hình chính VI One: lịch hẹn hôm nay, doanh thu tháng và gợi ý trong ngày",
+      "Danh sách kéo khách quay lại của VI One với khách lâu chưa ghé",
+      "Thẻ khách VI One với ghi chú, chi tiêu, thanh toán và lịch sử hẹn"
+    ],
+    "shotcap": "Hình minh họa dùng dữ liệu mẫu."
+  },
+  "whoFor": {
+    "eyebrow": "Dành cho ai",
+    "h2": "Nếu sổ khách của bạn đang nằm trong đầu",
+    "lead": "VI One làm cho người một mình lo hết một ghế — và cho những tiệm nhỏ nơi ai cũng còn nhớ tên từng khách.",
+    "pills": ["Thợ nối mi", "Thợ nail", "Thợ chân mày", "Thợ tóc", "Thợ xăm", "Chuyên viên da", "Thợ hớt tóc", "Tiệm nhỏ"]
+  },
+  "honest": {
+    "eyebrow": "Đọc trước khi tải",
+    "h2": "Những gì VI One chưa làm được ở Mỹ",
+    "lead": "Vài thứ VI One đang chạy ở Hàn Quốc thì ở đây chưa bật. Bạn nên biết trước khi tải, chứ không phải sau.",
+    "items": [
+      { "b": "Đây không phải máy tính tiền.", "t": "VI One ghi lại bạn đã được trả bao nhiêu và cho dịch vụ nào. App không nhận tiền và không đụng tới máy quẹt thẻ của bạn." },
+      { "b": "Tin nhắn nhắc hẹn tự động chưa chạy ở Mỹ.", "t": "Ở Hàn Quốc thì đang chạy. Nhắn tin ở Mỹ cần một số điện thoại đã được nhà mạng duyệt, việc đó đang làm — tới khi xong, bạn tự nhắn nhắc khách." },
+      { "b": "Chưa có AI tự trả lời khách.", "t": "Phần AI trả lời câu hỏi lặp đi lặp lại cần một số nhận tin mà ở Mỹ chúng tôi chưa có. Phần AI tóm tắt cuộc gọi ghi âm thì đã chạy được rồi." },
+      { "b": "Không có KakaoTalk.", "t": "Đó là kênh nhắn tin của Hàn Quốc. Ở đây nó không xuất hiện trên màn hình của bạn." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Giá",
+    "h2": "Bắt đầu miễn phí. Cứ dùng miễn phí tới khi thấy Pro đáng tiền.",
+    "lead": "Không đếm ngược dùng thử, không cần nhập thẻ — bản Starter là trọn bộ sổ khách, miễn phí lâu dài.",
+    "starter": {
+      "name": "Starter", "amt": "Miễn phí",
+      "items": ["Không giới hạn thẻ khách, kèm ghi chú và hình", "Tự xếp hạng Mới / Khách quen / VIP / Có nguy cơ mất", "Nhắc kéo khách lại và cảnh báo tiền trung bình giảm", "Sổ hẹn theo bảng dịch vụ của bạn", "Ghi doanh thu nhanh và xem tiền theo tháng", "AI tóm tắt cuộc gọi và rút từ khóa", "Mở thẳng tin nhắn Instagram"],
+      "fine": "Ở Mỹ lúc này đây là lựa chọn thành thật — mọi thứ ghi ở trên đều chạy được ngay."
+    },
+    "pro": {
+      "name": "Pro", "amt": "Trả phí", "amtSmall": "theo tháng hoặc theo năm",
+      "items": ["Toàn bộ bản Starter", "Báo cáo kinh doanh hằng tháng", "Nhắc hẹn tự động — hiện chỉ ở Hàn Quốc", "AI tự trả lời câu hỏi — hiện chỉ ở Hàn Quốc"],
+      "fine": "Hai trong bốn phần của Pro chưa bật ở Mỹ, nên ở Mỹ Pro chỉ thêm báo cáo tháng là chính. Giá hiện tại xem trong App Store. Ngày nào thay đổi, trang này sẽ được sửa ngay."
+    }
+  },
+  "who": {
+    "eyebrow": "Ai làm ra app",
+    "h2": "Một người mà bạn email được thật",
+    "name": "Sangwoo Park", "role": "Nhà sáng lập, Rigid Point Advisory", "place": "Seoul, Hàn Quốc",
+    "p1": "Mười hai năm lên kế hoạch, bán và bàn giao phần mềm doanh nghiệp cho các công ty toàn cầu, ở những dự án lớn tại Hàn Quốc, Singapore và Mỹ. VI One là chỗ công việc đó được xoay về phía một tiệm một ghế thay vì một phòng họp: cùng một người thiết kế, viết, phát hành và trả lời hỗ trợ. App nằm trên App Store, không nằm trong một file thuyết trình.",
+    "p2": "Rigid Point Advisory vẫn làm việc đã làm trước VI One — tư vấn phần mềm doanh nghiệp và thiết kế giải pháp AI cho những công ty cần thứ được bàn giao, chứ không phải thứ được mô tả."
+  },
+  "contact": {
+    "eyebrow": "Liên hệ",
+    "h2": "Nói chuyện thẳng với người làm ra app",
+    "lead": "Một câu hỏi, một lỗi, hay một thứ tiệm bạn cần mà VI One chưa có — cứ viết thẳng cho tôi. Tôi đọc hết và thường trả lời trong ngày, theo giờ Seoul.",
+    "appLink": "Tải VI One trên App Store"
+  },
+  "footer": { "tagline": "Tư vấn CNTT · Giải pháp AI", "founder": "Sangwoo Park, Nhà sáng lập", "bizLabel": "Giấy phép kinh doanh", "place": "Seoul, Hàn Quốc" }
+}

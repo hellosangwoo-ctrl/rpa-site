@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "VI One — CRM de salón para fichas, visitas y ventas",
-    "description": "CRM para iPhone hecho para profesionales de belleza que trabajan solas. Las notas, fotos, visitas y el gasto de cada cliente en una sola ficha, y un aviso cuando una clienta habitual se tarda o empieza a gastar menos sin decirlo. Starter gratis.",
-    "ogDescription": "Las notas, fotos, visitas y el gasto de cada cliente en una sola ficha, y un aviso cuando una clienta habitual se tarda o empieza a gastar menos sin decirlo."
+    "description": "CRM para iPhone hecho para profesionales de belleza que trabajan solas. Las notas, visitas y el gasto de cada cliente en una sola ficha, y un aviso cuando una clienta habitual se tarda o empieza a gastar menos sin decirlo. Starter gratis.",
+    "ogDescription": "Las notas, visitas y el gasto de cada cliente en una sola ficha, y un aviso cuando una clienta habitual se tarda o empieza a gastar menos sin decirlo."
   },
   "schema": {
     "org": "Consultora de TI con sede en Seúl que desarrolla software empresarial y soluciones de IA, y publica sus propios productos.",
     "appName": "VI One: CRM y fichas de salón",
-    "appDesc": "CRM de salón para profesionales de belleza que trabajan solas. Notas, fotos, visitas y gasto de cada cliente en una ficha, niveles automáticos Nueva/Habitual/VIP/En riesgo, avisos de reactivación y de caída del ticket promedio, agenda de citas, registro de ventas y resúmenes con IA de las llamadas grabadas."
+    "appDesc": "CRM de salón para profesionales de belleza que trabajan solas. Notas, visitas y gasto de cada cliente en una ficha, niveles automáticos Nueva/Habitual/VIP/En riesgo, avisos de reactivación y de caída del ticket promedio, agenda de citas, registro de ventas y resúmenes con IA de las llamadas grabadas."
   },
   "nav": { "what": "Qué hace", "pricing": "Precios", "getApp": "Descargar", "getAppAria": "Descargar VI One en el App Store", "contact": "Contacto" },
   "hero": {
@@ -23,7 +23,7 @@
     "h2": "La libreta de clientes que se mantiene sola",
     "lead": "Tú eres la recepción, la artista y la contabilidad. Acordarse queda de cuenta de VI One.",
     "cards": [
-      { "icon": "🗂️", "h3": "Una ficha por cliente", "p": "Notas, fotos, teléfono, Instagram y todo el historial de visitas en un solo perfil. Lo escribes una vez y se mantiene al día." },
+      { "icon": "🗂️", "h3": "Una ficha por cliente", "p": "Notas, teléfono, Instagram y todo el historial de visitas en un solo perfil. Lo escribes una vez y se mantiene al día." },
       { "icon": "🏅", "h3": "Niveles que se actualizan solos", "p": "Nueva, Habitual, VIP y En riesgo salen de las visitas y del gasto reales, no de una etiqueta que pensabas poner hace tres meses." },
       { "icon": "⏳", "h3": "Te enteras antes de que se vaya", "p": "VI One aprende el ritmo de cada cliente. Si alguien que viene cada cuatro semanas llega a la séptima, te avisa cuando un mensaje todavía sirve." },
       { "icon": "📉", "h3": "Gasta menos y no lo dice", "p": "La clienta que sigue viniendo pero pide el servicio más barato. VI One vigila el ticket promedio de cada una y marca la caída antes de que se convierta en una despedida." },
@@ -74,7 +74,7 @@
     "lead": "Sin cuenta regresiva de prueba y sin tarjeta para empezar — Starter es la libreta de clientes completa, gratis y sin vencimiento.",
     "starter": {
       "name": "Starter", "amt": "Gratis",
-      "items": ["Fichas de cliente ilimitadas, con notas y fotos", "Niveles automáticos Nueva / Habitual / VIP / En riesgo", "Avisos de reactivación y de caída del ticket promedio", "Agenda de citas con tu propio menú", "Registro rápido de ventas e ingresos del mes", "Resúmenes de llamadas con IA y palabras clave", "Enlace directo al DM de Instagram"],
+      "items": ["Fichas de cliente ilimitadas, con notas", "Niveles automáticos Nueva / Habitual / VIP / En riesgo", "Avisos de reactivación y de caída del ticket promedio", "Agenda de citas con tu propio menú", "Registro rápido de ventas e ingresos del mes", "Resúmenes de llamadas con IA y palabras clave", "Enlace directo al DM de Instagram"],
       "fine": "Hoy en EE. UU. esta es la opción honesta — todo lo de arriba funciona ahora mismo."
     },
     "pro": {
@@ -90,6 +90,7 @@
     "p1": "Doce años planificando, vendiendo y entregando software empresarial para compañías globales, en cuentas grandes de Corea, Singapur y Estados Unidos. VI One es ese mismo trabajo apuntado a un salón de una silla en vez de a una sala de juntas: diseñado, programado, publicado y atendido por la misma persona. Está en el App Store, no en una presentación.",
     "p2": "Rigid Point Advisory sigue haciendo lo que hacía antes de VI One — consultoría de software empresarial y diseño de soluciones de IA para empresas que necesitan algo entregado, no algo descrito."
   },
+  "android": { "eyebrow": "Android", "h2": "Android está en camino", "lead": "Lanzamos primero iOS. La versión para Android se está construyendo. ¿Quieres que te avisemos cuando salga?", "cta": "Avísame cuando salga Android", "mailSubject": "VI One - avisame cuando salga Android" },
   "contact": {
     "eyebrow": "Contacto",
     "h2": "Habla con quien lo construyó",

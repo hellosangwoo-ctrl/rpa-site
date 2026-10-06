@@ -291,6 +291,16 @@ ${c.pricing.pro.items.map(li).join('\n')}
   </div>
 </div></section>
 
+${c.android ? `
+<section id="android"><div class="wrap">
+  <div class="eyebrow">${esc(c.android.eyebrow)}</div>
+  <h2>${rich(c.android.h2)}</h2>
+  <p class="lead">${rich(c.android.lead)}</p>
+  <div class="btns" style="margin-top:22px">
+    <a class="btn d" href="mailto:${cfg.email}?subject=${encodeURIComponent(c.android.mailSubject)}">${esc(c.android.cta)}</a>
+  </div>
+</div></section>
+` : ''}
 <section id="contact" class="contact"><div class="wrap">
   <div class="eyebrow" style="color:var(--blue2)">${esc(c.contact.eyebrow)}</div>
   <h2>${rich(c.contact.h2)}</h2>

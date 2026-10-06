@@ -49,6 +49,7 @@ nav a.l{white-space:nowrap}
 .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent}
 .btn.p{background:#fff;color:var(--navy)}
 .btn.g{border-color:rgba(255,255,255,.42);color:#fff}
+.btn.d{background:var(--navy);color:#fff}
 .btn:hover{transform:translateY(-1px)}
 .btn svg{flex:none;margin-right:-2px}
 

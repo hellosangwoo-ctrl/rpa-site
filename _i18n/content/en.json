@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "VI One — Salon CRM for Client Notes, Visits & Sales",
-    "description": "A salon CRM for solo beauty pros on iPhone. Every client's notes, photos, visits and spend on one card — plus a heads-up when a regular is overdue or quietly spending less. Free Starter.",
-    "ogDescription": "Every client's notes, photos, visits and spend on one card — plus a heads-up when a regular is overdue or quietly spending less."
+    "description": "A salon CRM for solo beauty pros on iPhone. Every client's notes, visits and spend on one card — plus a heads-up when a regular is overdue or quietly spending less. Free Starter.",
+    "ogDescription": "Every client's notes, visits and spend on one card — plus a heads-up when a regular is overdue or quietly spending less."
   },
   "schema": {
     "org": "A Seoul-based IT consultancy building enterprise software and AI solutions, and shipping its own products.",
     "appName": "VI One: Salon CRM & Clients",
-    "appDesc": "A salon CRM for solo beauty pros. Every client's notes, photos, visits and spend on one card, automatic New/Regular/VIP/At-risk tiers, win-back and average-ticket alerts, an appointment book, a sales tracker and AI summaries of recorded client calls."
+    "appDesc": "A salon CRM for solo beauty pros. Every client's notes, visits and spend on one card, automatic New/Regular/VIP/At-risk tiers, win-back and average-ticket alerts, an appointment book, a sales tracker and AI summaries of recorded client calls."
   },
   "nav": { "what": "What it does", "pricing": "Pricing", "getApp": "Get the app", "getAppAria": "Download VI One on the App Store", "contact": "Contact" },
   "hero": {
@@ -23,7 +23,7 @@
     "h2": "The client book that keeps itself",
     "lead": "You are the front desk, the artist and the bookkeeper. VI One takes the remembering.",
     "cards": [
-      { "icon": "🗂️", "h3": "One card per client", "p": "Notes, photos, phone, Instagram handle and the full visit history on a single client profile. Write it once; it stays current." },
+      { "icon": "🗂️", "h3": "One card per client", "p": "Notes, phone, Instagram handle and the full visit history on a single client profile. Write it once; it stays current." },
       { "icon": "🏅", "h3": "Tiers that update themselves", "p": "New, Regular, VIP and At risk are set from real visits and real spend — not from a tag you meant to add three months ago." },
       { "icon": "⏳", "h3": "A heads-up before they drift", "p": "VI One learns each client's own rhythm. When someone who books every four weeks reaches week seven, you hear about it while a message still works." },
       { "icon": "📉", "h3": "Spending less, quietly", "p": "The client who still comes in but books the cheaper service. VI One watches average ticket per client and flags the slide before it becomes a goodbye." },
@@ -74,7 +74,7 @@
     "lead": "No trial countdown and no card to start — Starter is the whole client book, permanently free.",
     "starter": {
       "name": "Starter", "amt": "Free",
-      "items": ["Unlimited client cards with notes and photos", "Automatic New / Regular / VIP / At risk tiers", "Win-back and average-ticket alerts", "Appointment book with your own menu", "Quick sales log and monthly revenue", "AI call summaries and keywords", "Instagram DM deep link"],
+      "items": ["Unlimited client cards with notes", "Automatic New / Regular / VIP / At risk tiers", "Win-back and average-ticket alerts", "Appointment book with your own menu", "Quick sales log and monthly revenue", "AI call summaries and keywords", "Instagram DM deep link"],
       "fine": "This is the honest pick in the US today — everything above works right now."
     },
     "pro": {
@@ -90,6 +90,7 @@
     "p1": "Twelve years planning, selling and delivering enterprise software for global companies, on large accounts in Korea, Singapore and the United States. VI One is that work pointed at a one-chair studio instead of a boardroom: designed, built, shipped and supported by the same person. It is on the App Store, not in a slide deck.",
     "p2": "Rigid Point Advisory also does what it did before VI One — enterprise software consulting and AI solution design for companies that need something delivered rather than described."
   },
+  "android": { "eyebrow": "Android", "h2": "Android is on the way", "lead": "We shipped iOS first. The Android version is being built. Want us to tell you when it lands?", "cta": "Email me when Android is out", "mailSubject": "VI One - tell me when Android is out" },
   "contact": {
     "eyebrow": "Contact",
     "h2": "Talk to the person who built it",

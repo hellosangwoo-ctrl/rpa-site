@@ -72,7 +72,7 @@ function routingScript(self) {
     if(forced && known(forced)){
       want=forced;
       if(store){ store.setItem(KEY,want); store.setItem(ONCE,'1'); }
-      if(history.replaceState) history.replaceState(null,'',location.pathname+location.hash);
+      if(history.replaceState){ var q=location.search.replace(/[?&]lang=[a-z]{2}\\b/,'').replace(/^&/,'?'); history.replaceState(null,'',location.pathname+q+location.hash); }
     } else {
       var saved=store&&store.getItem(KEY);
       if(saved && known(saved)){ want=saved; }
@@ -89,7 +89,7 @@ function routingScript(self) {
         if(store) store.setItem(ONCE,'1');
       }
     }
-    if(AUTO && want && want!==HERE) location.replace(pathOf(want));
+    if(AUTO && want && want!==HERE) location.replace(pathOf(want)+location.search+location.hash);
   }catch(e){}
 })();
 </script>`;

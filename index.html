@@ -49,7 +49,7 @@ nav a.l{white-space:nowrap}
     if(forced && known(forced)){
       want=forced;
       if(store){ store.setItem(KEY,want); store.setItem(ONCE,'1'); }
-      if(history.replaceState) history.replaceState(null,'',location.pathname+location.hash);
+      if(history.replaceState){ var q=location.search.replace(/[?&]lang=[a-z]{2}\b/,'').replace(/^&/,'?'); history.replaceState(null,'',location.pathname+q+location.hash); }
     } else {
       var saved=store&&store.getItem(KEY);
       if(saved && known(saved)){ want=saved; }
@@ -66,7 +66,7 @@ nav a.l{white-space:nowrap}
         if(store) store.setItem(ONCE,'1');
       }
     }
-    if(AUTO && want && want!==HERE) location.replace(pathOf(want));
+    if(AUTO && want && want!==HERE) location.replace(pathOf(want)+location.search+location.hash);
   }catch(e){}
 })();
 </script>
@@ -253,11 +253,14 @@ footer .en{margin-top:20px;padding-top:20px;border-top:1px solid var(--line);col
 <footer><div class="wrap">
   <div><strong>Rigid Point Advisory</strong> — IT 컨설팅 · AI 솔루션</div>
   <div class="biz">
+    <span>상호 리지포인트 어드바이저리</span>
     <span>대표 박상우</span>
     <span>사업자등록번호 595-08-03684</span>
-    <span>서울</span>
+    <span>서울특별시 종로구 송월길 99, 209동 404호(홍파동, 경희궁자이 2단지)</span>
     <span>hellosangwoo@gmail.com</span>
+    <span>010-9189-7853</span>
   </div>
+  <div class="biz"><a href="https://hellosangwoo-ctrl.github.io/vione-legal/privacy-policy.html">개인정보처리방침</a><span class="dot">·</span><a href="https://hellosangwoo-ctrl.github.io/vione-legal/terms-of-service.html">이용약관</a></div>
   <div class="en">VI One is an app for solo beauty pros — hair, nails, lashes, waxing. Appointment reminders go out automatically the day before, so no-shows turn into cancellations you can still resell. Every client's notes, visits and spend sit on one card, tiers update themselves, and VI One tells you when a regular goes quiet or quietly starts spending less. Available on the App Store.</div>
   <!--i18n:footerlangs-->
 <div class="ko"><a href="/en/?lang=en" hreflang="en" lang="en">English</a><span class="dot">·</span><a href="/vi/?lang=vi" hreflang="vi" lang="vi">Tiếng Việt</a><span class="dot">·</span><a href="/ja/?lang=ja" hreflang="ja" lang="ja">日本語</a><span class="dot">·</span><a href="/es/?lang=es" hreflang="es" lang="es">Español</a></div>

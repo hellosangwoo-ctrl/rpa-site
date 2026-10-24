@@ -21,7 +21,7 @@ p{margin-top:12px;opacity:.82;font-size:16px;line-height:1.6}
 <script>
 (function () {
   var IOS = 'https://apps.apple.com/app/id6774170446';          // 스토어가 방문자 국가로 자동 전환됩니다
-  var AND = '';                                                  // 안드로이드 출시 후 Google Play URL 입력
+  var AND = 'https://play.google.com/store/apps/details?id=com.rigidpointadvisory.vioneapp';
   var ua = navigator.userAgent || '';
   var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   var isAnd = /Android/i.test(ua);
@@ -32,7 +32,8 @@ p{margin-top:12px;opacity:.82;font-size:16px;line-height:1.6}
 <body><div>
   <img class="mark" src="/assets/img/app-icon.svg" alt="VI One">
   <h1>VI One</h1>
-  <p>App Store로 이동합니다…</p>
+  <p>스토어로 이동합니다…</p>
   <a class="btn" href="https://apps.apple.com/app/id6774170446">App Store에서 받기</a>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=com.rigidpointadvisory.vioneapp" style="margin-left:8px">Google Play에서 받기</a>
   <div class="sub">자동으로 열리지 않으면 위 버튼을 누르세요 · <a href="https://rigidpointadvisory.com/">Rigid Point Advisory</a></div>
 </div></body></html>

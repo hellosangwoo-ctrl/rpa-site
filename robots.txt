@@ -6,3 +6,4 @@ User-agent: Bytespider
 Disallow: /
 
 Sitemap: https://rigidpointadvisory.com/sitemap.xml
+Sitemap: https://rigidpointadvisory.com/sitemap-guide.xml

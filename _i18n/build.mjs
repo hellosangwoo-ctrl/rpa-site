@@ -324,6 +324,7 @@ ${c.android ? `
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 ${SWITCHER_JS}
+<script src="/assets/geo-beacon.js" defer></script>
 </body></html>
 `;
 }

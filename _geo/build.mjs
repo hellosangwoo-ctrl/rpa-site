@@ -83,6 +83,15 @@ const CTA = `<aside class="cta-box">
   <div class="btns"><a class="btn w" href="${APP_STORE}">App Store</a><a class="btn o" href="${PLAY}">Google Play</a></div>
 </aside>`;
 
+/* 가이드별 스토어 링크 — Play 는 설치 출처(utm)를 Play Console 획득 보고서에 남긴다.
+   App Store 는 제공자 토큰(pt)이 있어야 캠페인으로 잡히므로, APPLE_PT 가 비어 있으면 기본 링크를 쓴다. */
+const APPLE_PT = '';
+const storeLinks = (slug) => ({
+  ios: APPLE_PT ? `https://apps.apple.com/app/apple-store/id6774170446?pt=${APPLE_PT}&ct=${encodeURIComponent(('geo_' + slug).slice(0, 30))}&mt=8` : APP_STORE,
+  android: `${PLAY}&referrer=${encodeURIComponent(`utm_source=rigidpointadvisory&utm_medium=guide&utm_campaign=${slug}`)}`,
+});
+const ctaFor = (slug) => { const l = storeLinks(slug); return CTA.replace(`href="${APP_STORE}"`, `href="${l.ios}"`).replace(`href="${PLAY}"`, `href="${l.android.replace(/&/g, '&amp;')}"`); };
+
 const FOOT = `<footer><div class="wrap">
   <div><strong>VI One</strong> · <a href="/">rigidpointadvisory.com</a> · <a href="/guide/">원장님 가이드</a> · <a href="mailto:hellosangwoo@gmail.com">hellosangwoo@gmail.com</a></div>
   <div class="biz">Rigid Point Advisory · 대표 박상우 · 사업자등록번호 595-08-03684 · 서울 종로구</div>
@@ -120,7 +129,7 @@ function postPage(p, all) {
   <article>
 ${p.html}
   </article>
-  ${CTA}
+  ${ctaFor(p.slug)}
   ${related.length ? `<section class="rel"><h2>함께 읽으면 좋은 글</h2><ul>${related.map(r => `<li><a href="/guide/${r.slug}/">${esc(r.title)}</a></li>`).join('')}</ul></section>` : ''}
 </main>
 ` + FOOT;

@@ -85,7 +85,7 @@ const CTA = `<aside class="cta-box">
 
 /* 가이드별 스토어 링크 — Play 는 설치 출처(utm)를 Play Console 획득 보고서에 남긴다.
    App Store 는 제공자 토큰(pt)이 있어야 캠페인으로 잡히므로, APPLE_PT 가 비어 있으면 기본 링크를 쓴다. */
-const APPLE_PT = '';
+const APPLE_PT = '666666';
 const storeLinks = (slug) => ({
   ios: APPLE_PT ? `https://apps.apple.com/app/apple-store/id6774170446?pt=${APPLE_PT}&ct=${encodeURIComponent(('geo_' + slug).slice(0, 30))}&mt=8` : APP_STORE,
   android: `${PLAY}&referrer=${encodeURIComponent(`utm_source=rigidpointadvisory&utm_medium=guide&utm_campaign=${slug}`)}`,

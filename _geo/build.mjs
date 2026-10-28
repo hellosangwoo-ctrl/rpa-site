@@ -78,7 +78,7 @@ const head = ({ title, description, url, type = 'article', jsonld }) => `<!docty
 
 const CTA = `<aside class="cta-box">
   <div class="k">VI One(브이원)</div>
-  <h2>오던 손님이 계속 오게.</h2>
+  <h2>단골 손님이 계속 오실 수 있게.</h2>
   <p>미용실·네일·속눈썹·왁싱 원장님을 위한 예약장부·고객차트 앱입니다. 손님마다 다른 재방문 주기를 기억해 뜸해진 손님을 먼저 알려드리고, 예약 확인 문자로 노쇼를 줄입니다. Starter는 무료로 시작할 수 있습니다.</p>
   <div class="btns"><a class="btn w" href="${APP_STORE}">App Store</a><a class="btn o" href="${PLAY}">Google Play</a></div>
 </aside>`;

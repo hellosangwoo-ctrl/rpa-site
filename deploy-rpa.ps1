@@ -55,6 +55,15 @@ if (-not (Test-Path ".git")) {
     git init -b main 1>$null 2>$null
     Say "[ok] git init" "Green"
 }
+# --- sync with the live site first (never overwrite newer pages) ----------
+if ((git remote 2>$null) -contains "origin") {
+    git fetch origin main
+    git stash push -u -m "deploy-autostash" 1>$null 2>$null
+    git merge --ff-only origin/main
+    if ($LASTEXITCODE -ne 0) { Say "[!!] local history differs from the live site - ask Claude to sync first" "Red"; exit 1 }
+    git stash pop 1>$null 2>$null
+    Say "[ok] synced with live site" "Green"
+}
 git add -A 1>$null 2>$null
 git commit -m "rigidpointadvisory.com publish" 1>$null 2>$null
 Say "[ok] commit" "Green"
@@ -72,7 +81,7 @@ if (-not $repoExists) {
     $hasOrigin = (git remote 2>$null) -contains "origin"
     if (-not $hasOrigin) { git remote add origin "https://github.com/$GHUSER/$REPO.git" }
     git branch -M main 1>$null 2>$null
-    git push -u origin main --force
+    git push -u origin main
     if ($LASTEXITCODE -ne 0) { Say "[!!] git push failed - see message above" "Red"; exit 1 }
     Say "[ok] pushed" "Green"
 }

@@ -1,19 +1,19 @@
 {
   "meta": {
-    "title": "VI One — Phần mềm quản lý khách cho tiệm nail và salon",
+    "title": "OSEYO (trước đây là VI One) — Phần mềm quản lý khách cho tiệm nail và salon",
     "description": "CRM trên iPhone dành cho thợ làm đẹp làm một mình. Ghi chú, lượt ghé và số tiền của từng khách gọn trong một thẻ — kèm lời nhắc khi khách quen lâu chưa tới hoặc âm thầm xài ít lại. Bản Starter miễn phí.",
     "ogDescription": "Ghi chú, lượt ghé và số tiền của từng khách gọn trong một thẻ — kèm lời nhắc khi khách quen lâu chưa tới hoặc âm thầm xài ít lại."
   },
   "schema": {
     "org": "Công ty tư vấn CNTT tại Seoul, làm phần mềm doanh nghiệp và giải pháp AI, đồng thời tự phát hành sản phẩm của mình.",
-    "appName": "VI One: Quản lý khách cho tiệm",
+    "appName": "OSEYO: Quản lý khách cho tiệm",
     "appDesc": "Phần mềm quản lý khách dành cho thợ làm đẹp làm một mình. Ghi chú, lượt ghé và chi tiêu của từng khách trong một thẻ, tự xếp hạng Mới/Khách quen/VIP/Có nguy cơ mất, nhắc kéo khách quay lại, cảnh báo tiền trung bình giảm, sổ hẹn, sổ doanh thu và AI tóm tắt cuộc gọi đã ghi âm."
   },
-  "nav": { "what": "Làm được gì", "pricing": "Giá", "getApp": "Tải app", "getAppAria": "Tải VI One trên App Store", "contact": "Liên hệ" },
+  "nav": { "what": "Làm được gì", "pricing": "Giá", "getApp": "Tải app", "getAppAria": "Tải OSEYO trên App Store", "contact": "Liên hệ" },
   "hero": {
-    "kick": "VI One · của Rigid Point Advisory",
+    "kick": "OSEYO · của Rigid Point Advisory",
     "h1": "Ghi chú, lượt ghé và tiền <br>của từng khách — <em>gọn trong một thẻ</em>",
-    "sub": "VI One là phần mềm quản lý khách cho thợ làm đẹp làm một mình. Sổ khách, sổ hẹn và sổ doanh thu nằm chung trong một app iPhone — và bạn được nhắc khi khách quen im lặng hoặc âm thầm xài ít lại.",
+    "sub": "OSEYO (trước đây là VI One) là phần mềm quản lý khách cho thợ làm đẹp làm một mình. Sổ khách, sổ hẹn và sổ doanh thu nằm chung trong một app iPhone — và bạn được nhắc khi khách quen im lặng hoặc âm thầm xài ít lại.",
     "btnDownload": "Tải trên App Store",
     "btnSee": "Xem app làm được gì",
     "btnEmail": "Email cho người làm ra app"
@@ -21,15 +21,15 @@
   "what": {
     "eyebrow": "Làm được gì",
     "h2": "Sổ khách tự giữ mình gọn gàng",
-    "lead": "Bạn vừa tiếp khách, vừa làm nghề, vừa tính sổ. Phần phải nhớ, cứ để VI One lo.",
+    "lead": "Bạn vừa tiếp khách, vừa làm nghề, vừa tính sổ. Phần phải nhớ, cứ để OSEYO lo.",
     "cards": [
       { "icon": "🗂️", "h3": "Mỗi khách một thẻ", "p": "Ghi chú, số phone, Instagram và toàn bộ lượt ghé nằm trong một hồ sơ. Ghi một lần, về sau luôn đúng." },
       { "icon": "🏅", "h3": "Hạng khách tự cập nhật", "p": "Mới, Khách quen, VIP và Có nguy cơ mất được tính từ lượt ghé và số tiền thật — không phải từ cái nhãn bạn định dán ba tháng trước." },
-      { "icon": "⏳", "h3": "Biết trước khi khách rời đi", "p": "VI One học nhịp riêng của từng khách. Người quen cứ bốn tuần một lần mà đã qua tuần thứ bảy, bạn được báo lúc nhắn tin vẫn còn kịp." },
-      { "icon": "📉", "h3": "Xài ít lại mà không nói gì", "p": "Khách vẫn tới nhưng chọn dịch vụ rẻ hơn. VI One theo dõi tiền trung bình mỗi lần của từng người và báo lúc con số bắt đầu tụt." },
+      { "icon": "⏳", "h3": "Biết trước khi khách rời đi", "p": "OSEYO học nhịp riêng của từng khách. Người quen cứ bốn tuần một lần mà đã qua tuần thứ bảy, bạn được báo lúc nhắn tin vẫn còn kịp." },
+      { "icon": "📉", "h3": "Xài ít lại mà không nói gì", "p": "Khách vẫn tới nhưng chọn dịch vụ rẻ hơn. OSEYO theo dõi tiền trung bình mỗi lần của từng người và báo lúc con số bắt đầu tụt." },
       { "icon": "📅", "h3": "Sổ hẹn", "p": "Theo đúng bảng dịch vụ và giá của bạn. Yêu cầu → đã nhận → đã xong, và lần hẹn rồi không tới được ghi vào hồ sơ khách để bạn thấy rõ thói quen." },
       { "icon": "💵", "h3": "Doanh thu", "p": "Ghi một lần thu chỉ mất vài giây. Tổng tiền theo từng khách và doanh thu tháng này, khỏi mở Excel lúc nửa đêm." },
-      { "icon": "🎙️", "h3": "Ghi chú cuộc gọi, viết sẵn cho bạn", "p": "Ghi âm cuộc gọi của khách, VI One viết phần tóm tắt và từ khóa thẳng vào thẻ khách — để tháng sau \"cổ muốn dời buổi fill qua thứ Bảy\" vẫn còn nằm đó.", "note": "Chỉ ghi âm cuộc gọi ở nơi luật cho phép và khi mọi người đều biết." },
+      { "icon": "🎙️", "h3": "Ghi chú cuộc gọi, viết sẵn cho bạn", "p": "Ghi âm cuộc gọi của khách, OSEYO viết phần tóm tắt và từ khóa thẳng vào thẻ khách — để tháng sau \"cổ muốn dời buổi fill qua thứ Bảy\" vẫn còn nằm đó.", "note": "Chỉ ghi âm cuộc gọi ở nơi luật cho phép và khi mọi người đều biết." },
       { "icon": "📸", "h3": "Nhắn Instagram một chạm", "p": "Khách mới phần lớn tìm bạn ở đó. Mở thẳng khung chat của khách từ thẻ của họ, khỏi đi lục lại tên tài khoản." }
     ]
   },
@@ -45,24 +45,24 @@
     ],
     "appbtnTop": "Tải trên",
     "alts": [
-      "Màn hình chính VI One: lịch hẹn hôm nay, doanh thu tháng và gợi ý trong ngày",
-      "Danh sách kéo khách quay lại của VI One với khách lâu chưa ghé",
-      "Thẻ khách VI One với ghi chú, chi tiêu, thanh toán và lịch sử hẹn"
+      "Màn hình chính OSEYO: lịch hẹn hôm nay, doanh thu tháng và gợi ý trong ngày",
+      "Danh sách kéo khách quay lại của OSEYO với khách lâu chưa ghé",
+      "Thẻ khách OSEYO với ghi chú, chi tiêu, thanh toán và lịch sử hẹn"
     ],
     "shotcap": "Hình minh họa dùng dữ liệu mẫu."
   },
   "whoFor": {
     "eyebrow": "Dành cho ai",
     "h2": "Nếu sổ khách của bạn đang nằm trong đầu",
-    "lead": "VI One làm cho người một mình lo hết một ghế — và cho những tiệm nhỏ nơi ai cũng còn nhớ tên từng khách.",
+    "lead": "OSEYO làm cho người một mình lo hết một ghế — và cho những tiệm nhỏ nơi ai cũng còn nhớ tên từng khách.",
     "pills": ["Thợ nối mi", "Thợ nail", "Thợ chân mày", "Thợ tóc", "Thợ xăm", "Chuyên viên da", "Thợ hớt tóc", "Tiệm nhỏ"]
   },
   "honest": {
     "eyebrow": "Đọc trước khi tải",
-    "h2": "Những gì VI One chưa làm được ở Mỹ",
-    "lead": "Vài thứ VI One đang chạy ở Hàn Quốc thì ở đây chưa bật. Bạn nên biết trước khi tải, chứ không phải sau.",
+    "h2": "Những gì OSEYO chưa làm được ở Mỹ",
+    "lead": "Vài thứ OSEYO đang chạy ở Hàn Quốc thì ở đây chưa bật. Bạn nên biết trước khi tải, chứ không phải sau.",
     "items": [
-      { "b": "Đây không phải máy tính tiền.", "t": "VI One ghi lại bạn đã được trả bao nhiêu và cho dịch vụ nào. App không nhận tiền và không đụng tới máy quẹt thẻ của bạn." },
+      { "b": "Đây không phải máy tính tiền.", "t": "OSEYO ghi lại bạn đã được trả bao nhiêu và cho dịch vụ nào. App không nhận tiền và không đụng tới máy quẹt thẻ của bạn." },
       { "b": "Tin nhắn nhắc hẹn tự động chưa chạy ở Mỹ.", "t": "Ở Hàn Quốc thì đang chạy. Nhắn tin ở Mỹ cần một số điện thoại đã được nhà mạng duyệt, việc đó đang làm — tới khi xong, bạn tự nhắn nhắc khách." },
       { "b": "Chưa có AI tự trả lời khách.", "t": "Phần AI trả lời câu hỏi lặp đi lặp lại cần một số nhận tin mà ở Mỹ chúng tôi chưa có. Phần AI tóm tắt cuộc gọi ghi âm thì đã chạy được rồi." },
       { "b": "Không có KakaoTalk.", "t": "Đó là kênh nhắn tin của Hàn Quốc. Ở đây nó không xuất hiện trên màn hình của bạn." }
@@ -87,15 +87,15 @@
     "eyebrow": "Ai làm ra app",
     "h2": "Một người mà bạn email được thật",
     "name": "Sangwoo Park", "role": "Nhà sáng lập, Rigid Point Advisory", "place": "Seoul, Hàn Quốc",
-    "p1": "Mười hai năm lên kế hoạch, bán và bàn giao phần mềm doanh nghiệp cho các công ty toàn cầu, ở những dự án lớn tại Hàn Quốc, Singapore và Mỹ. VI One là chỗ công việc đó được xoay về phía một tiệm một ghế thay vì một phòng họp: cùng một người thiết kế, viết, phát hành và trả lời hỗ trợ. App nằm trên App Store, không nằm trong một file thuyết trình.",
-    "p2": "Rigid Point Advisory vẫn làm việc đã làm trước VI One — tư vấn phần mềm doanh nghiệp và thiết kế giải pháp AI cho những công ty cần thứ được bàn giao, chứ không phải thứ được mô tả."
+    "p1": "Mười hai năm lên kế hoạch, bán và bàn giao phần mềm doanh nghiệp cho các công ty toàn cầu, ở những dự án lớn tại Hàn Quốc, Singapore và Mỹ. OSEYO là chỗ công việc đó được xoay về phía một tiệm một ghế thay vì một phòng họp: cùng một người thiết kế, viết, phát hành và trả lời hỗ trợ. App nằm trên App Store, không nằm trong một file thuyết trình.",
+    "p2": "Rigid Point Advisory vẫn làm việc đã làm trước OSEYO — tư vấn phần mềm doanh nghiệp và thiết kế giải pháp AI cho những công ty cần thứ được bàn giao, chứ không phải thứ được mô tả."
   },
-  "android": { "eyebrow": "Android", "h2": "Android đang trên đường", "lead": "Chúng tôi ra iOS trước. Bản Android đang được làm. Bạn muốn được báo khi có không?", "cta": "Báo cho tôi khi có Android", "mailSubject": "VI One - bao cho toi khi co Android" },
+  "android": { "eyebrow": "Android", "h2": "Android đang trên đường", "lead": "Chúng tôi ra iOS trước. Bản Android đang được làm. Bạn muốn được báo khi có không?", "cta": "Báo cho tôi khi có Android", "mailSubject": "OSEYO - bao cho toi khi co Android" },
   "contact": {
     "eyebrow": "Liên hệ",
     "h2": "Nói chuyện thẳng với người làm ra app",
-    "lead": "Một câu hỏi, một lỗi, hay một thứ tiệm bạn cần mà VI One chưa có — cứ viết thẳng cho tôi. Tôi đọc hết và thường trả lời trong ngày, theo giờ Seoul.",
-    "appLink": "Tải VI One trên App Store"
+    "lead": "Một câu hỏi, một lỗi, hay một thứ tiệm bạn cần mà OSEYO chưa có — cứ viết thẳng cho tôi. Tôi đọc hết và thường trả lời trong ngày, theo giờ Seoul.",
+    "appLink": "Tải OSEYO trên App Store"
   },
   "footer": { "tagline": "Tư vấn CNTT · Giải pháp AI", "founder": "Sangwoo Park, Nhà sáng lập", "bizLabel": "Giấy phép kinh doanh", "place": "Seoul, Hàn Quốc" }
 }

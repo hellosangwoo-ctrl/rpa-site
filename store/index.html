@@ -8,9 +8,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
-  --navy:#0D1B3D; --ink:#16203A; --mid:#5B6780; --line:#E3E8F2; --bg:#fff; --soft:#F5F7FC;
-  --blue:#2C7FD4; --blue2:#7EC8F8; --violet:#6B2FCC; --green:#1C9E45; --amber:#C77700; --red:#C6342B;
-  --grad:linear-gradient(135deg,#0D1B3D 0%,#3A2A8C 55%,#6B2FCC 100%);
+  --navy:#2B1E16; --ink:#2B1E16; --mid:#6E5E52; --line:#EADCCE; --bg:#fff; --soft:#FBF6F0;
+  --blue:#C4481A; --blue2:#F6C391; --violet:#9C3610; --green:#1C9E45; --amber:#C77700; --red:#C6342B;
+  --grad:linear-gradient(160deg,#C4481A 0%,#9C3610 100%);
   --wrap:1080px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -22,14 +22,14 @@ h1,h2,h3{letter-spacing:-.6px;line-height:1.3;font-weight:800}
 
 /* ---------- login ---------- */
 #login{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--grad)}
-.loginbox{width:100%;max-width:400px;background:#fff;border-radius:20px;padding:38px 32px 30px;box-shadow:0 24px 60px rgba(13,27,61,.3)}
+.loginbox{width:100%;max-width:400px;background:#fff;border-radius:20px;padding:38px 32px 30px;box-shadow:0 24px 60px rgba(43,30,22,.3)}
 .loginbox .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px}
 .loginbox .brand img{width:32px;height:32px;border-radius:9px}
 .loginbox h1{font-size:23px;margin-top:20px}
 .loginbox .sub{color:var(--mid);font-size:15px;margin-top:8px}
 label{display:block;font-size:14px;font-weight:700;margin:18px 0 7px}
 input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:11px;font:inherit;font-size:16px;background:#fff}
-input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(44,127,212,.14)}
+input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(196,72,26,.14)}
 .sbtn{width:100%;margin-top:22px;padding:14px;border:0;border-radius:12px;background:var(--navy);color:#fff;
   font:inherit;font-weight:700;font-size:16px;cursor:pointer}
 .sbtn:disabled{opacity:.55;cursor:default}
@@ -49,8 +49,8 @@ header .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size
 header .brand img{width:28px;height:28px;border-radius:8px}
 header .sp{flex:1}
 .plan{font-size:12.5px;font-weight:800;padding:5px 11px;border-radius:999px;letter-spacing:.02em}
-.plan.pro{background:#EDE4FF;color:var(--violet)}
-.plan.starter{background:#EEF1F7;color:var(--mid)}
+.plan.pro{background:#FCE8DA;color:var(--violet)}
+.plan.starter{background:#F3ECE4;color:var(--mid)}
 .out{background:none;border:1px solid var(--line);border-radius:9px;padding:7px 13px;font:inherit;font-size:14px;
   font-weight:600;color:var(--mid);cursor:pointer}
 
@@ -79,19 +79,19 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 td .sm{display:block;color:var(--mid);font-size:13.5px;margin-top:2px}
 .empty{padding:26px 20px;color:var(--mid);font-size:15px}
 
-.chip{display:inline-block;font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 9px;margin:0 4px 3px 0;background:#EEF1F7;color:var(--mid);white-space:nowrap}
-.chip.vip{background:#F3E8FF;color:var(--violet)}
+.chip{display:inline-block;font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 9px;margin:0 4px 3px 0;background:#F3ECE4;color:var(--mid);white-space:nowrap}
+.chip.vip{background:#FCE8DA;color:var(--violet)}
 .chip.reg{background:#E9F6EC;color:var(--green)}
-.chip.new{background:#E8F2FE;color:var(--blue)}
+.chip.new{background:#FCE8DA;color:var(--blue)}
 .chip.risk{background:#FDECEA;color:var(--red)}
 .st{font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap;display:inline-block}
 .st.pending{background:#FFF3E0;color:var(--amber)}
-.st.confirmed{background:#E8F2FE;color:var(--blue)}
+.st.confirmed{background:#FCE8DA;color:var(--blue)}
 .st.completed{background:#E9F6EC;color:var(--green)}
-.st.cancelled{background:#EEF1F7;color:var(--mid)}
+.st.cancelled{background:#F3ECE4;color:var(--mid)}
 .st.noshow{background:#FDECEA;color:var(--red)}
 
-.lock{padding:24px 20px;background:linear-gradient(135deg,#F7F3FF,#EEF4FE);border-top:1px solid var(--line)}
+.lock{padding:24px 20px;background:linear-gradient(135deg,#FCE8DA,#FBF1E6);border-top:1px solid var(--line)}
 .lock h3{font-size:16px}
 .lock p{color:var(--mid);font-size:15px;margin-top:7px;max-width:560px}
 .lock a{display:inline-flex;align-items:center;gap:8px;margin-top:15px;background:#000;color:#fff;text-decoration:none;

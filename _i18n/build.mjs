@@ -183,7 +183,7 @@ ${CSS}</style>
 <body>
 
 <header><div class="wrap"><nav>
-  <a class="logo" href="${loc.path}"><span>RPA<b>.</b></span></a>
+  <a class="logo" href="${loc.path}" aria-label="OSEYO"><img src="/assets/img/app-icon.svg" alt=""><span>OSEYO</span></a>
   <span class="sp"></span>
   <a class="l hide" href="#what">${esc(c.nav.what)}</a>
   <a class="l hide" href="#pricing">${esc(c.nav.pricing)}</a>

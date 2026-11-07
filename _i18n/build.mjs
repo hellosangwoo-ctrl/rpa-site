@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* OSEYO (구 VI One) / Rigid Point Advisory — static multilingual site builder.
+/* OSEYO / Rigid Point Advisory — static multilingual site builder.
  *
  *   node _i18n/build.mjs            # writes every locale page + sitemap.xml
  *   node _i18n/build.mjs --check    # builds into memory and reports diffs only
@@ -150,7 +150,7 @@ function buildPage(loc, c) {
         address: { '@type': 'PostalAddress', addressLocality: 'Seoul', addressCountry: 'KR' } },
       { '@type': 'WebPage', '@id': `${S}${loc.path}#page`, url: S + loc.path, name: c.meta.title,
         inLanguage: loc.ogLocale.replace('_', '-'), isPartOf: { '@id': S + '/#org' } },
-      { '@type': 'SoftwareApplication', '@id': `${S}${loc.path}#vione`, name: c.schema.appName, alternateName: ['오셔요', 'VI One'],
+      { '@type': 'SoftwareApplication', '@id': `${S}${loc.path}#oseyo`, name: c.schema.appName, alternateName: ['오셔요'],
         applicationCategory: 'BusinessApplication', operatingSystem: 'iOS',
         inLanguage: loc.ogLocale.replace('_', '-'), author: { '@id': S + '/#org' },
         installUrl: APP, sameAs: [APP], description: c.schema.appDesc,

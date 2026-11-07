@@ -43,7 +43,7 @@ function boot({ href, referrer }) {
 {
   const b = boot({ href: 'https://rigidpointadvisory.com/', referrer: '' });
   assert.equal(b.sent.length, 0);
-  b.click('https://apps.apple.com/kr/app/vi-one/id6774170446');
+  b.click('https://apps.apple.com/kr/app/id6774170446');
   assert.equal(b.sent.length, 1);
   assert.equal(b.sent[0].k, 'store');
   assert.equal(b.sent[0].s, 'ios');
@@ -58,13 +58,13 @@ function boot({ href, referrer }) {
   assert.equal(of('https://example.com/'), null);
   assert.equal(of('/app'), 'app_page');
   assert.equal(of('https://rigidpointadvisory.com/app/'), 'app_page');
-  b.click('/guide/vi-one/');
+  b.click('/guide/oseyo/');
   assert.equal(b.sent.length, 0);
 }
 
 // 5) 사내 이동 리퍼러(같은 도메인)는 유입이 아니다
 {
-  const b = boot({ href: 'https://rigidpointadvisory.com/guide/vi-one/', referrer: 'https://rigidpointadvisory.com/guide/' });
+  const b = boot({ href: 'https://rigidpointadvisory.com/guide/oseyo/', referrer: 'https://rigidpointadvisory.com/guide/' });
   assert.equal(b.sent.length, 0);
 }
 

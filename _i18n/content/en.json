@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "OSEYO (formerly VI One) — Salon CRM for Client Notes, Visits & Sales",
+    "title": "OSEYO — Salon CRM for Client Notes, Visits & Sales",
     "description": "A salon CRM for solo beauty pros on iPhone. Every client's notes, visits and spend on one card — plus a heads-up when a regular is overdue or quietly spending less. Free Starter.",
     "ogDescription": "Every client's notes, visits and spend on one card — plus a heads-up when a regular is overdue or quietly spending less."
   },
@@ -13,7 +13,7 @@
   "hero": {
     "kick": "OSEYO · by Rigid Point Advisory",
     "h1": "Every client's notes, visits <br>and spend — <em>on one card</em>",
-    "sub": "OSEYO (formerly VI One) is a salon CRM for solo beauty pros. Your client book, your appointment book and your sales tracker in one iPhone app — and a heads-up when a regular goes quiet or quietly starts spending less.",
+    "sub": "OSEYO is a salon CRM for solo beauty pros. Your client book, your appointment book and your sales tracker in one iPhone app — and a heads-up when a regular goes quiet or quietly starts spending less.",
     "btnDownload": "Download on the App Store",
     "btnSee": "See what it does",
     "btnEmail": "Email the founder"

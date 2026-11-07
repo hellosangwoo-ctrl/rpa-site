@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "OSEYO (trước đây là VI One) — Phần mềm quản lý khách cho tiệm nail và salon",
+    "title": "OSEYO — Phần mềm quản lý khách cho tiệm nail và salon",
     "description": "CRM trên iPhone dành cho thợ làm đẹp làm một mình. Ghi chú, lượt ghé và số tiền của từng khách gọn trong một thẻ — kèm lời nhắc khi khách quen lâu chưa tới hoặc âm thầm xài ít lại. Bản Starter miễn phí.",
     "ogDescription": "Ghi chú, lượt ghé và số tiền của từng khách gọn trong một thẻ — kèm lời nhắc khi khách quen lâu chưa tới hoặc âm thầm xài ít lại."
   },
@@ -13,7 +13,7 @@
   "hero": {
     "kick": "OSEYO · của Rigid Point Advisory",
     "h1": "Ghi chú, lượt ghé và tiền <br>của từng khách — <em>gọn trong một thẻ</em>",
-    "sub": "OSEYO (trước đây là VI One) là phần mềm quản lý khách cho thợ làm đẹp làm một mình. Sổ khách, sổ hẹn và sổ doanh thu nằm chung trong một app iPhone — và bạn được nhắc khi khách quen im lặng hoặc âm thầm xài ít lại.",
+    "sub": "OSEYO là phần mềm quản lý khách cho thợ làm đẹp làm một mình. Sổ khách, sổ hẹn và sổ doanh thu nằm chung trong một app iPhone — và bạn được nhắc khi khách quen im lặng hoặc âm thầm xài ít lại.",
     "btnDownload": "Tải trên App Store",
     "btnSee": "Xem app làm được gì",
     "btnEmail": "Email cho người làm ra app"

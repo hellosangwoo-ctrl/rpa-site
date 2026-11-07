@@ -2,7 +2,7 @@
 
 Rigid Point Advisory 회사 사이트 (정적 HTML, GitHub Pages).
 
-- `index.html` — 회사 소개 한 페이지 (하는 일 / VI One / 대표 / 연락처)
+- `index.html` — 회사 소개 한 페이지 (하는 일 / 오셔요 / 대표 / 연락처)
 - `app/index.html` — **명함 QR이 가리키는 스마트 링크.** iOS·데스크톱은 App Store로, 안드로이드는 홈으로 보냅니다.
   안드로이드 출시 후 `app/index.html`의 `var AND = ''` 에 Google Play URL만 넣으면 됩니다. **명함은 다시 안 찍어도 됩니다.**
 - `CNAME` — rigidpointadvisory.com

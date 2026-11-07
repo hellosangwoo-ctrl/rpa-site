@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "OSEYO (antes VI One) — CRM de salón para fichas, visitas y ventas",
+    "title": "OSEYO — CRM de salón para fichas, visitas y ventas",
     "description": "CRM para iPhone hecho para profesionales de belleza que trabajan solas. Las notas, visitas y el gasto de cada cliente en una sola ficha, y un aviso cuando una clienta habitual se tarda o empieza a gastar menos sin decirlo. Starter gratis.",
     "ogDescription": "Las notas, visitas y el gasto de cada cliente en una sola ficha, y un aviso cuando una clienta habitual se tarda o empieza a gastar menos sin decirlo."
   },
@@ -13,7 +13,7 @@
   "hero": {
     "kick": "OSEYO · de Rigid Point Advisory",
     "h1": "Notas, visitas y gasto de <br>cada cliente — <em>en una sola ficha</em>",
-    "sub": "OSEYO (antes VI One) es un CRM de salón para quienes atienden solas. Tu libreta de clientes, tu agenda de citas y tu registro de ventas en una app de iPhone — y un aviso cuando una clienta habitual se queda callada o empieza a gastar menos.",
+    "sub": "OSEYO es un CRM de salón para quienes atienden solas. Tu libreta de clientes, tu agenda de citas y tu registro de ventas en una app de iPhone — y un aviso cuando una clienta habitual se queda callada o empieza a gastar menos.",
     "btnDownload": "Descargar en el App Store",
     "btnSee": "Ver qué hace",
     "btnEmail": "Escribir al fundador"

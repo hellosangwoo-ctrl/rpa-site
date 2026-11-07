@@ -16,7 +16,7 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(HERE, '..');
 const CHECK = process.argv.includes('--check');
 const SITE = 'https://rigidpointadvisory.com';
-const APP_STORE = 'https://apps.apple.com/kr/app/vi-one/id6774170446';
+const APP_STORE = 'https://apps.apple.com/kr/app/id6774170446';
 const PLAY = 'https://play.google.com/store/apps/details?id=com.rigidpointadvisory.vioneapp';
 
 /* 금칙어 — BRIEF §2 한국어 카피 금칙어 + 실적 주장. 걸리면 빌드 실패 */
@@ -77,7 +77,7 @@ const head = ({ title, description, url, type = 'article', jsonld }) => `<!docty
 </nav></div></header>`;
 
 const CTA = `<aside class="cta-box">
-  <div class="k">오셔요(구 VI One)</div>
+  <div class="k">오셔요</div>
   <h2>단골 손님이 계속 오실 수 있게.</h2>
   <p>미용실·네일·속눈썹·왁싱 원장님을 위한 예약장부·고객차트 앱입니다. 손님마다 다른 재방문 주기를 기억해 뜸해진 손님을 먼저 알려드리고, 예약 확인 문자로 노쇼를 줄입니다. Starter는 무료로 시작할 수 있습니다.</p>
   <div class="btns"><a class="btn w" href="${APP_STORE}">App Store</a><a class="btn o" href="${PLAY}">Google Play</a></div>
@@ -102,7 +102,7 @@ const FOOT = `<footer><div class="wrap">
 `;
 
 const ORG = { '@type': 'Organization', '@id': `${SITE}/#org`, name: 'Rigid Point Advisory', url: `${SITE}/` };
-const APP = { '@type': 'SoftwareApplication', '@id': `${SITE}/#vione`, name: '오셔요', alternateName: ['OSEYO', 'VI One', '브이원', '또와', 'Ttowa'] };
+const APP = { '@type': 'SoftwareApplication', '@id': `${SITE}/#oseyo`, name: '오셔요', alternateName: ['OSEYO'] };
 
 function postPage(p, all) {
   const related = all.filter(x => x.slug !== p.slug).slice(0, 4);
@@ -145,7 +145,7 @@ function hubPage(all) {
     url, jsonld }) + `
 <main class="wrap art">
   <h1>원장님 가이드</h1>
-  <p class="answer">미용실·네일·속눈썹·왁싱 원장님이 예약·노쇼·단골 관리에서 바로 써먹을 수 있는 실무 글을 모았습니다. 어떤 앱을 쓰든 통하는 방법을 먼저 쓰고, 오셔요(구 VI One)에서는 어떻게 하는지 마지막에 붙였습니다.</p>
+  <p class="answer">미용실·네일·속눈썹·왁싱 원장님이 예약·노쇼·단골 관리에서 바로 써먹을 수 있는 실무 글을 모았습니다. 어떤 앱을 쓰든 통하는 방법을 먼저 쓰고, 오셔요에서는 어떻게 하는지 마지막에 붙였습니다.</p>
   <ul class="hub">
 ${all.map(p => `    <li><a href="/guide/${p.slug}/"><b>${esc(p.title)}</b><span>${esc(p.description)}</span><small>갱신 ${p.updated}</small></a></li>`).join('\n')}
   </ul>

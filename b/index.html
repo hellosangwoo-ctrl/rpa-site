@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#FBF6F0">
+<meta name="format-detection" content="telephone=no">
+<title>온라인 예약 — 오셔요</title>
+<meta name="description" content="앱 설치 없이 시술과 시간을 골라 바로 예약하세요.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--bg:#FBF6F0;--ink:#2B1E16;--sub:#5C4D42;--mute:#6E5E52;--line:#EADCCE;--accent:#C4481A;--accent-ink:#9A3612;--accent-soft:#FCEBE2;
+  --card:#FFFFFF;--chip:#F5EEE6;--ok:#1C7A3E;--ok-bg:#E6F4EA;--warn-bg:#FFF1D6;--warn-ink:#5C4300;--warn-line:#C9A24A;--err:#B42318;--err-bg:#FDECEA}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font-family:"Pretendard Variable","Pretendard",-apple-system,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;word-break:keep-all;-webkit-text-size-adjust:100%;line-height:1.5}
+main{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding-bottom:120px}
+[hidden]{display:none!important}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid #1D5FD1;outline-offset:2px}
+.inapp{background:var(--warn-bg);color:var(--warn-ink);padding:10px 16px;display:flex;align-items:center;gap:10px;font-size:13px;line-height:1.45}
+.inapp p{margin:0;flex:1}
+.inapp button{height:36px;padding:0 12px;border-radius:8px;border:1px solid var(--warn-line);background:#fff;color:var(--warn-ink);font-weight:600;cursor:pointer;flex-shrink:0}
+.store{padding:28px 20px 8px}
+.store .badge{display:inline-flex;align-items:center;gap:8px;color:var(--mute);font-size:13px}
+.store .badge i{width:26px;height:26px;border-radius:8px;background:var(--accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-weight:700;font-size:13px}
+.store h1{margin:10px 0 0;font-size:26px;line-height:1.3;font-weight:800;letter-spacing:-.4px}
+.store .meta{margin:6px 0 0;color:var(--sub);font-size:14px}
+.notice{margin:14px 20px 0;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px;color:var(--sub);white-space:pre-line}
+.step{margin:26px 20px 0}
+.step h2{margin:0 0 12px;font-size:17px;font-weight:700;display:flex;align-items:center;gap:8px}
+.step h2 .n{width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;display:inline-flex;align-items:center;justify-content:center}
+.step.dim h2{color:var(--mute)} .step.dim h2 .n{background:#B9A99B}
+.svc{display:flex;flex-direction:column;gap:8px}
+.svc label{display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;min-height:64px}
+.svc input{position:absolute;opacity:0;pointer-events:none}
+.svc label:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.svc label:has(input:focus-visible){outline:3px solid #1D5FD1;outline-offset:2px}
+.svc .nm{font-weight:700;font-size:16px}
+.svc .sm{font-size:14px;color:var(--sub)}
+.svc .price{margin-left:auto;font-weight:700;font-size:15px;white-space:nowrap}
+.days{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 6px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.days button{flex:0 0 58px;height:70px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;scroll-snap-align:start}
+.days button .w{font-size:12px;color:var(--mute)} .days button .d{font-size:18px;font-weight:700}
+.days button.sun .w{color:#C6342B} .days button.sat .w{color:#2C5FB0}
+.days button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:#fff}
+.days button[aria-pressed="true"] .w{color:#fff}
+.days button.none{opacity:.45}
+.days .more{flex:0 0 72px;font-size:13px;color:var(--sub)}
+.tgroup{margin-top:14px} .tgroup h3{margin:0 0 8px;font-size:13px;font-weight:600;color:var(--mute)}
+.times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.times button{height:46px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);font-weight:600;font-size:15px;cursor:pointer}
+.times button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:#fff}
+.empty{padding:22px 16px;text-align:center;color:var(--mute);background:var(--card);border-radius:12px;border:1px dashed var(--line);font-size:14px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+.field input,.field textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
+.field textarea{min-height:76px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(196,72,26,.15)}
+.field .err{margin-top:6px;font-size:13px;color:var(--err)}
+.field input[aria-invalid="true"]{border-color:var(--err)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--sub)}
+.agree input{width:22px;height:22px;margin:0;flex-shrink:0;accent-color:var(--accent)}
+.agree a{color:var(--accent-ink)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(251,246,240,.96);border-top:1px solid var(--line);padding:12px 20px calc(12px + env(safe-area-inset-bottom));backdrop-filter:saturate(1.2) blur(6px)}
+.bar .in{max-width:440px;margin:0 auto}
+.bar .sum{font-size:13.5px;color:var(--sub);margin-bottom:8px;min-height:20px}
+.btn{width:100%;min-height:54px;border-radius:14px;border:2px solid var(--accent);background:var(--accent);color:#fff;font-size:17px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.btn:disabled{background:#D8C7B8;border-color:#D8C7B8;cursor:default}
+.btn.sec{background:#fff;color:var(--accent-ink)}
+.btn.ghost{background:transparent;border-color:transparent;color:var(--sub);font-size:15px;min-height:44px}
+.alert{margin:12px 20px 0;padding:12px 14px;border-radius:12px;font-size:14px}
+.alert.err{background:var(--err-bg);color:var(--err)}
+.center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;gap:14px}
+.center .ico{width:64px;height:64px;border-radius:20px;background:var(--accent-soft);color:var(--accent-ink);display:flex;align-items:center;justify-content:center}
+.center .ico.ok{background:var(--ok-bg);color:var(--ok)}
+.center h1{margin:0;font-size:23px;line-height:1.35}
+.center p{margin:0;font-size:15px;color:var(--sub)}
+.ticket{width:100%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:left;display:flex;flex-direction:column;gap:6px}
+.ticket .ref{font-size:28px;font-weight:800;letter-spacing:3px;font-variant-numeric:tabular-nums}
+.ticket .lb{font-size:12.5px;color:var(--mute)}
+.ticket .row{font-size:15px}
+#stInfo{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:700;background:var(--chip);color:var(--sub)}
+.pill.confirmed{background:var(--ok-bg);color:var(--ok)} .pill.requested{background:var(--warn-bg);color:var(--warn-ink)} .pill.cancelled{background:var(--err-bg);color:var(--err)}
+.acts{width:100%;display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.acts .two{display:flex;gap:10px} .acts .two .btn{flex:1;font-size:15px;min-height:48px}
+.foot{margin-top:28px;padding:0 20px;font-size:12px;color:var(--mute);text-align:center}
+.foot a{color:var(--mute)}
+.skel{height:64px;border-radius:14px;background:linear-gradient(90deg,#F1E8DE,#F8F1EA,#F1E8DE);background-size:200% 100%;animation:sk 1.2s infinite}
+@keyframes sk{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.skel{animation:none}}
+</style>
+</head>
+<body>
+<main>
+  <div class="inapp" id="inapp" hidden><p id="inappText"></p><button type="button" id="openExternal"></button></div>
+
+  <section id="vLoading" aria-live="polite">
+    <div class="store"><div class="skel" style="height:34px;width:60%"></div></div>
+    <div class="step"><div class="skel"></div><div class="skel" style="margin-top:8px"></div></div>
+  </section>
+
+  <!-- 예약하기 -->
+  <section id="vBook" hidden>
+    <header class="store">
+      <span class="badge"><i aria-hidden="true">오</i><span id="tPowered"></span></span>
+      <h1 id="storeName"></h1>
+      <p class="meta" id="storeMeta"></p>
+    </header>
+    <p class="notice" id="storeNotice" hidden></p>
+
+    <div class="step" id="s1">
+      <h2><span class="n">1</span><span id="tPickService"></span></h2>
+      <div class="svc" id="svcList" role="radiogroup"></div>
+    </div>
+
+    <div class="step dim" id="s2">
+      <h2><span class="n">2</span><span id="tPickTime"></span></h2>
+      <div id="timeArea" hidden>
+        <div class="days" id="days" role="group"></div>
+        <div id="timeSlots" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="step dim" id="s3">
+      <h2><span class="n">3</span><span id="tYourInfo"></span></h2>
+      <form id="form" novalidate hidden>
+        <div class="field"><label for="fName" id="tName"></label><input id="fName" name="name" autocomplete="name" maxlength="30" required><div class="err" id="eName" hidden></div></div>
+        <div class="field"><label for="fPhone" id="tPhone"></label><input id="fPhone" name="tel" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="010-0000-0000" required><div class="err" id="ePhone" hidden></div></div>
+        <div class="field"><label for="fNote" id="tNote"></label><textarea id="fNote" name="note" maxlength="200"></textarea><div class="err" id="eNote" hidden></div></div>
+        <label class="agree"><input type="checkbox" id="fAgree"><span><span id="tAgree"></span> <a href="https://hellosangwoo-ctrl.github.io/vione-legal/privacy-policy.html" target="_blank" rel="noopener" id="tPrivacy"></a></span></label>
+        <div class="field"><div class="err" id="eAgree" hidden></div></div>
+      </form>
+    </div>
+    <p class="foot" id="footBook"></p>
+
+    <div class="bar"><div class="in">
+      <div class="alert err" id="submitErr" role="alert" hidden style="margin:0 0 10px"></div>
+      <div class="sum" id="sum" aria-live="polite"></div>
+      <button class="btn" id="submit" type="button" disabled></button>
+    </div></div>
+  </section>
+
+  <!-- 완료 -->
+  <section id="vDone" class="center" hidden>
+    <div class="ico ok" id="doneIco"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h1 id="doneTitle"></h1>
+    <p id="doneText"></p>
+    <div class="ticket">
+      <span class="lb" id="tRefLabel"></span>
+      <span class="ref" id="doneRef"></span>
+      <span class="row" id="doneWhen"></span>
+      <span class="row" id="doneSvc"></span>
+      <span class="lb" id="tKeepRef"></span>
+    </div>
+    <div class="acts">
+      <a class="btn" id="doneView"></a>
+      <div class="two"><a class="btn sec" id="doneCall" hidden></a><a class="btn sec" id="doneMap" target="_blank" rel="noopener" hidden></a></div>
+      <a class="btn ghost" id="doneAgain"></a>
+    </div>
+  </section>
+
+  <!-- 내 예약 확인 -->
+  <section id="vStatus" class="center" hidden>
+    <h1 id="tStatusTitle"></h1>
+    <div class="ticket">
+      <span class="lb" id="tRefLabel2"></span>
+      <span class="ref" id="stRef"></span>
+      <div id="stAsk">
+        <div class="field" style="margin:10px 0 8px"><label for="fLast4" id="tPhone4"></label>
+          <input id="fLast4" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off"></div>
+        <button class="btn" id="stCheck" type="button"></button>
+      </div>
+      <div id="stInfo" hidden>
+        <span class="row"><span class="pill" id="stPill"></span></span>
+        <span class="row" id="stStore" style="font-weight:700"></span>
+        <span class="row" id="stWhen"></span>
+        <span class="row" id="stSvc"></span>
+      </div>
+      <div class="alert err" id="stErr" role="alert" hidden style="margin:8px 0 0"></div>
+    </div>
+    <div class="acts" id="stActs" hidden>
+      <button class="btn sec" id="stCancel" type="button" hidden></button>
+      <div class="two"><a class="btn sec" id="stCall" hidden></a><a class="btn sec" id="stMap" target="_blank" rel="noopener" hidden></a></div>
+      <a class="btn ghost" id="stAgain" hidden></a>
+    </div>
+  </section>
+
+  <!-- 없음, 오류 -->
+  <section id="vMsg" class="center" hidden>
+    <div class="ico"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5"/></svg></div>
+    <h1 id="msgTitle"></h1>
+    <p id="msgText"></p>
+    <button class="btn" id="msgRetry" type="button" hidden></button>
+  </section>
+</main>
+<script src="/b/booking-core.js"></script>
+<script>
+(function () {
+  "use strict";
+  var C = window.BookingCore;
+  var SUPABASE_URL = "https://awnumaschuictuclucmt.supabase.co";
+  var SUPABASE_KEY = "sb_publishable_JPdIb72UcP7lZfmOtFXflg_GFMh_0tT"; // 공개용 키. 이 페이지가 부르는 것은 public_booking_* 함수뿐
+  // 구글 Actions Center 파트너 ID. 파트너 승인 전에는 비워 둔다(비어 있으면 전환을 보내지 않는다).
+  var GOOGLE_PARTNER_ID = "";
+  var GOOGLE_CONVERSION_URL = "https://www.google.com/maps/conversion/collect";
+  var STRIP_DAYS = 14;
+
+  var $ = function (id) { return document.getElementById(id); };
+  var lang = C.pickLang(navigator.languages || [navigator.language]);
+  var T = function (k) { return C.t(lang, k); };
+  document.documentElement.lang = lang;
+
+  var entry = C.parseEntry(location.href);
+  var S = { page: null, svc: null, from: null, dates: [], day: null, time: null, sending: false, rid: null, maxDay: null };
+
+  function show(id) { ["vLoading", "vBook", "vDone", "vStatus", "vMsg"].forEach(function (v) { $(v).hidden = v !== id; }); window.scrollTo(0, 0); }
+  function text(id, k) { $(id).textContent = T(k); }
+  function telHref(p) { return "tel:" + String(p).replace(/[^0-9+]/g, ""); }
+  function mapHref(a) { return "https://map.naver.com/p/search/" + encodeURIComponent(a); }
+
+  var ua = navigator.userAgent || "";
+  if (/KAKAOTALK/i.test(ua)) {
+    $("inapp").hidden = false; text("inappText", "inapp"); text("openExternal", "openExternal");
+    $("openExternal").addEventListener("click", function () { location.href = "kakaotalk://web/openExternal?url=" + encodeURIComponent(location.href); });
+  }
+
+  function rpc(fn, args) {
+    var ctrl = typeof AbortController === "function" ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 10000);
+    return fetch(SUPABASE_URL + "/rest/v1/rpc/" + fn, {
+      method: "POST",
+      headers: { apikey: SUPABASE_KEY, authorization: "Bearer " + SUPABASE_KEY, "content-type": "application/json" },
+      body: JSON.stringify(args), signal: ctrl ? ctrl.signal : undefined
+    }).then(function (r) { clearTimeout(timer); if (!r.ok) throw new Error("rpc " + r.status); return r.json(); },
+            function (e) { clearTimeout(timer); throw e; });
+  }
+
+  function message(titleKey, textKey, retry) {
+    text("msgTitle", titleKey); text("msgText", textKey);
+    $("msgRetry").hidden = !retry;
+    if (retry) { text("msgRetry", "retry"); $("msgRetry").onclick = retry; }
+    show("vMsg");
+  }
+
+  // ── 매장 열기 ──
+  function loadPage() {
+    show("vLoading");
+    rpc("public_booking_page", { p_slug: entry.slug }).then(function (p) {
+      if (!p || !p.ok) return message("notFoundTitle", "notFoundText");
+      S.page = p;
+      // 구글에서 들어온 손님: 30일 동안 이 매장과 함께 기억
+      if (entry.rwg) C.rwgCookies(entry.rwg, p.store.entity_id).forEach(function (c) { document.cookie = c; });
+      renderStore();
+    }).catch(function () { message("errorTitle", "errorText", loadPage); });
+  }
+
+  function renderStore() {
+    var st = S.page.store;
+    document.title = st.name + " " + (lang === "ko" ? "예약" : "booking") + " — 오셔요";
+    $("storeName").textContent = st.name;
+    $("storeMeta").textContent = [st.address, st.phone].filter(Boolean).join("  |  ");
+    if (st.notice) { $("storeNotice").textContent = st.notice; $("storeNotice").hidden = false; }
+    text("tPowered", "poweredBy"); text("tPickService", "pickService"); text("tPickTime", "pickTime"); text("tYourInfo", "yourInfo");
+    text("tName", "name"); text("tPhone", "phone"); text("tNote", "note"); $("fNote").placeholder = T("notePh");
+    text("tAgree", "agree"); text("tPrivacy", "privacy");
+    var list = $("svcList"); list.innerHTML = "";
+    if (!S.page.services.length) { list.innerHTML = '<div class="empty"></div>'; list.firstChild.textContent = T("e_service_not_found"); }
+    S.page.services.forEach(function (v, i) {
+      var lb = document.createElement("label");
+      var inp = document.createElement("input"); inp.type = "radio"; inp.name = "svc"; inp.value = v.id; inp.id = "svc" + i;
+      var box = document.createElement("span");
+      var nm = document.createElement("div"); nm.className = "nm"; nm.textContent = v.name;
+      var sm = document.createElement("div"); sm.className = "sm"; sm.textContent = C.fmtDuration(v.duration, lang);
+      box.appendChild(nm); box.appendChild(sm);
+      var pr = document.createElement("span"); pr.className = "price"; pr.textContent = C.fmtPrice(v.price, st.currency, lang);
+      lb.appendChild(inp); lb.appendChild(box); lb.appendChild(pr);
+      inp.addEventListener("change", function () { pickService(v); });
+      list.appendChild(lb);
+    });
+    updateBar();
+    show("vBook");
+  }
+
+  // ── 시술 → 날짜 ──
+  function pickService(v) {
+    S.svc = v; S.day = null; S.time = null; S.dates = [];
+    S.from = C.todayIn(S.page.store.tz);
+    S.maxDay = C.addDays(S.from, Math.max(0, (S.page.store.horizon_days || 30) - 1));
+    $("s2").classList.remove("dim"); $("timeArea").hidden = false;
+    $("s3").classList.add("dim"); $("form").hidden = true;
+    loadSlots(S.from, true);
+    updateBar();
+  }
+
+  function loadSlots(from, reset) {
+    $("days").setAttribute("aria-busy", "true");
+    $("timeSlots").innerHTML = '<div class="skel" style="height:46px"></div>';
+    var svcId = S.svc.id;
+    rpc("public_booking_slots", { p_slug: entry.slug, p_service_id: svcId, p_from: from, p_days: STRIP_DAYS }).then(function (r) {
+      if (!S.svc || S.svc.id !== svcId) return;
+      if (!r || !r.ok) throw new Error(r && r.error);
+      var strip = C.dayStrip(from, STRIP_DAYS, r.dates).filter(function (d) { return d.date <= S.maxDay; });
+      S.dates = reset ? strip : S.dates.concat(strip);
+      if (reset) {
+        var first = S.dates.filter(function (d) { return d.times.length; })[0];
+        S.day = first ? first.date : S.dates[0].date;
+      }
+      renderDays(); renderTimes();
+    }).catch(function () {
+      $("timeSlots").innerHTML = ""; var e = document.createElement("div"); e.className = "empty"; e.textContent = T("errorText"); $("timeSlots").appendChild(e);
+    }).then(function () { $("days").removeAttribute("aria-busy"); });
+  }
+
+  function renderDays() {
+    var box = $("days"); box.innerHTML = "";
+    S.dates.forEach(function (d) {
+      var b = document.createElement("button"); b.type = "button";
+      b.className = (d.dow === 0 ? "sun " : d.dow === 6 ? "sat " : "") + (d.times.length ? "" : "none");
+      b.setAttribute("aria-pressed", String(d.date === S.day));
+      b.setAttribute("aria-label", d.month + "/" + d.day + " " + C.DOW[lang === "ko" ? "ko" : "en"][d.dow] + (d.times.length ? "" : " - " + T("noSlots")));
+      b.innerHTML = '<span class="w"></span><span class="d"></span>';
+      b.firstChild.textContent = C.DOW[lang === "ko" ? "ko" : "en"][d.dow];
+      b.lastChild.textContent = d.day;
+      b.addEventListener("click", function () { S.day = d.date; S.time = null; renderDays(); renderTimes(); updateBar(); });
+      box.appendChild(b);
+    });
+    var last = S.dates[S.dates.length - 1];
+    if (last && last.date < S.maxDay) {
+      var more = document.createElement("button"); more.type = "button"; more.className = "more";
+      more.textContent = lang === "ko" ? "더 보기 ›" : "More ›";
+      more.addEventListener("click", function () { loadSlots(C.addDays(last.date, 1), false); });
+      box.appendChild(more);
+    }
+    var sel = box.querySelector('[aria-pressed="true"]');
+    if (sel && sel.scrollIntoView) sel.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }
+
+  function renderTimes() {
+    var box = $("timeSlots"); box.innerHTML = "";
+    var d = S.dates.filter(function (x) { return x.date === S.day; })[0];
+    if (!d || !d.times.length) { var e = document.createElement("div"); e.className = "empty"; e.textContent = T("noSlots"); box.appendChild(e); return; }
+    var g = C.groupTimes(d.times);
+    [["am", g.am], ["pm", g.pm], ["eve", g.eve]].forEach(function (pair) {
+      if (!pair[1].length) return;
+      var wrap = document.createElement("div"); wrap.className = "tgroup";
+      var h = document.createElement("h3"); h.textContent = T(pair[0]); wrap.appendChild(h);
+      var grid = document.createElement("div"); grid.className = "times";
+      pair[1].forEach(function (hm) {
+        var b = document.createElement("button"); b.type = "button"; b.textContent = hm;
+        b.setAttribute("aria-pressed", String(hm === S.time));
+        b.addEventListener("click", function () { pickTime(hm); });
+        grid.appendChild(b);
+      });
+      wrap.appendChild(grid); box.appendChild(wrap);
+    });
+  }
+
+  function pickTime(hm) {
+    S.time = hm; S.rid = null; renderTimes();
+    $("s3").classList.remove("dim"); $("form").hidden = false;
+    $("submitErr").hidden = true;
+    updateBar();
+    if (!$("fName").value) setTimeout(function () { $("s3").scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
+  }
+
+  function updateBar() {
+    var auto = S.page && S.page.store.auto_confirm;
+    $("submit").textContent = S.sending ? T("sending") : T(auto ? "submitAuto" : "submit");
+    var parts = [];
+    if (S.svc) parts.push(S.svc.name);
+    if (S.day && S.time) parts.push(C.fmtWhen(S.day + " " + S.time, lang));
+    $("sum").textContent = parts.join(", ");
+    $("submit").disabled = !(S.svc && S.day && S.time) || S.sending;
+  }
+
+  // 휴대폰 번호는 입력하면서 하이픈을 넣어 준다(한국)
+  $("fPhone").addEventListener("input", function (e) {
+    if ((S.page && S.page.store.country) !== "KR") return;
+    var v = e.target.value; if (/^[0-9-]*$/.test(v)) e.target.value = C.formatPhoneKR(v);
+  });
+
+  function showErrs(errs) {
+    [["name", "fName", "eName"], ["phone", "fPhone", "ePhone"], ["note", "fNote", "eNote"], ["agree", "fAgree", "eAgree"]].forEach(function (x) {
+      var m = errs[x[0]];
+      $(x[2]).hidden = !m; $(x[2]).textContent = m || "";
+      $(x[1]).setAttribute("aria-invalid", m ? "true" : "false");
+    });
+    var firstBad = ["name", "phone", "note", "agree"].filter(function (k) { return errs[k]; })[0];
+    if (firstBad) $({ name: "fName", phone: "fPhone", note: "fNote", agree: "fAgree" }[firstBad]).focus();
+    return !firstBad;
+  }
+
+  // ── 예약 보내기 ──
+  $("submit").addEventListener("click", function () {
+    if (S.sending) return;
+    var f = { name: $("fName").value, phone: $("fPhone").value, note: $("fNote").value, agree: $("fAgree").checked };
+    if (!showErrs(C.validateForm(f, S.page.store.country, lang))) return;
+    S.sending = true; S.rid = S.rid || C.requestId(); updateBar();
+    $("submitErr").hidden = true;
+    var rwg = C.rwgFor(document.cookie, S.page.store.entity_id);
+    rpc("public_booking_create", {
+      p_slug: entry.slug, p_service_id: S.svc.id, p_start_local: S.day + " " + S.time,
+      p_name: f.name.trim(), p_phone: f.phone, p_note: f.note.trim() || null, p_request_id: S.rid,
+      p_attribution: rwg ? { rwg_token: rwg, channel: "google" } : null
+    }).then(function (r) {
+      S.sending = false;
+      if (!r || !r.ok) {
+        var code = (r && r.error) || "generic";
+        $("submitErr").textContent = C.errorText(code, lang); $("submitErr").hidden = false;
+        if (code === "slot_unavailable") { S.time = null; S.rid = null; reloadSameDay(); }
+        if (code === "bad_phone") showErrs({ phone: T("errPhone") });
+        updateBar(); return;
+      }
+      sendConversion(rwg);
+      renderDone(r);
+    }).catch(function () {
+      S.sending = false; updateBar();
+      $("submitErr").textContent = C.errorText("generic", lang); $("submitErr").hidden = false;
+    });
+  });
+
+  function reloadSameDay() {
+    var keep = S.day, from = S.dates[0] && S.dates[0].date;
+    rpc("public_booking_slots", { p_slug: entry.slug, p_service_id: S.svc.id, p_from: from, p_days: S.dates.length || STRIP_DAYS }).then(function (r) {
+      if (!r || !r.ok) return;
+      S.dates = C.dayStrip(from, S.dates.length, r.dates); S.day = keep; renderDays(); renderTimes(); updateBar();
+    }).catch(function () {});
+  }
+
+  function sendConversion(rwg) {
+    var body = C.conversionBody(GOOGLE_PARTNER_ID, rwg);
+    if (!body) return;
+    try { fetch(GOOGLE_CONVERSION_URL, { method: "POST", headers: { "content-type": "text/plain" }, body: body, keepalive: true }).catch(function () {}); } catch (e) {}
+  }
+
+  function renderDone(r) {
+    var ok = r.status === "confirmed";
+    text("doneTitle", ok ? "doneOkTitle" : "doneReqTitle"); text("doneText", ok ? "doneOkText" : "doneReqText");
+    text("tRefLabel", "refLabel"); text("tKeepRef", "keepRef");
+    $("doneRef").textContent = r.ref;
+    $("doneWhen").textContent = C.fmtWhen(r.start, lang);
+    $("doneSvc").textContent = [r.service, C.fmtDuration(r.duration, lang)].filter(Boolean).join(", ");
+    $("doneView").textContent = T("viewMine"); $("doneView").href = "/b/?ref=" + encodeURIComponent(r.ref);
+    var st = S.page.store;
+    if (st.phone) { $("doneCall").hidden = false; $("doneCall").textContent = T("call"); $("doneCall").href = telHref(st.phone); }
+    if (st.address) { $("doneMap").hidden = false; $("doneMap").textContent = T("map"); $("doneMap").href = mapHref(st.address); }
+    $("doneAgain").textContent = T("another"); $("doneAgain").href = "/b/?s=" + encodeURIComponent(entry.slug);
+    try { localStorage.setItem("oseyo_last_ref", r.ref); } catch (e) {}
+    show("vDone");
+  }
+
+  // ── 내 예약 확인 ──
+  function openStatus() {
+    text("tStatusTitle", "statusTitle"); text("tRefLabel2", "refLabel"); text("tPhone4", "phone4"); text("stCheck", "check");
+    $("stRef").textContent = entry.ref;
+    show("vStatus");
+    $("stCheck").onclick = checkStatus;
+    $("fLast4").addEventListener("keydown", function (e) { if (e.key === "Enter") checkStatus(); });
+  }
+  function checkStatus() {
+    var l4 = $("fLast4").value.replace(/[^0-9]/g, "");
+    $("stErr").hidden = true;
+    if (l4.length !== 4) { $("stErr").textContent = T("phone4"); $("stErr").hidden = false; return; }
+    rpc("public_booking_status", { p_ref: entry.ref, p_phone4: l4 }).then(function (r) {
+      if (!r || !r.ok) { $("stErr").textContent = C.errorText((r && r.error) || "generic", lang); $("stErr").hidden = false; return; }
+      renderStatus(r, l4);
+    }).catch(function () { $("stErr").textContent = C.errorText("generic", lang); $("stErr").hidden = false; });
+  }
+  function renderStatus(r, l4) {
+    $("stAsk").hidden = true; $("stInfo").hidden = false; $("stActs").hidden = false;
+    $("stPill").className = "pill " + r.status; $("stPill").textContent = T("st_" + r.status);
+    $("stStore").textContent = r.store || "";
+    $("stWhen").textContent = C.fmtWhen(r.start, lang);
+    $("stSvc").textContent = [r.service, C.fmtDuration(r.duration, lang)].filter(Boolean).join(", ");
+    if (r.phone) { $("stCall").hidden = false; $("stCall").textContent = T("call"); $("stCall").href = telHref(r.phone); }
+    if (r.address) { $("stMap").hidden = false; $("stMap").textContent = T("map"); $("stMap").href = mapHref(r.address); }
+    if (r.slug) { $("stAgain").hidden = false; $("stAgain").textContent = T("another"); $("stAgain").href = "/b/?s=" + encodeURIComponent(r.slug); }
+    $("stCancel").hidden = !r.can_cancel; text("stCancel", "cancel");
+    if (!r.can_cancel && (r.status === "requested" || r.status === "confirmed")) { $("stErr").textContent = T("tooLate"); $("stErr").hidden = false; }
+    $("stCancel").onclick = function () {
+      if (!window.confirm(T("cancelConfirm"))) return;
+      $("stCancel").disabled = true;
+      rpc("public_booking_cancel", { p_ref: entry.ref, p_phone4: l4 }).then(function (c) {
+        $("stCancel").disabled = false;
+        if (!c || !c.ok) { $("stErr").textContent = c && c.error === "too_late" ? T("tooLate") : C.errorText((c && c.error) || "generic", lang); $("stErr").hidden = false; return; }
+        r.status = "cancelled"; r.can_cancel = false; $("stErr").hidden = true; renderStatus(r, l4);
+      }).catch(function () { $("stCancel").disabled = false; $("stErr").textContent = C.errorText("generic", lang); $("stErr").hidden = false; });
+    };
+  }
+
+  if (entry.ref) openStatus();
+  else if (entry.slug) loadPage();
+  else message("notFoundTitle", "notFoundText");
+})();
+</script>
+</body>
+</html>

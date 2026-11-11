@@ -113,6 +113,7 @@ button{font:inherit;color:inherit}
       <p class="meta" id="storeMeta"></p>
     </header>
     <p class="notice" id="storeNotice" hidden></p>
+    <p class="notice" id="prefill" hidden></p>
 
     <div class="step" id="s1">
       <h2><span class="n">1</span><span id="tPickService"></span></h2>
@@ -217,6 +218,7 @@ button{font:inherit;color:inherit}
   document.documentElement.lang = lang;
 
   var entry = C.parseEntry(location.href);
+  var pre = C.parsePrefill(location.href);   // 사진 보고 예약(/p/, /t/ 에서)
   var S = { page: null, svc: null, from: null, dates: [], day: null, time: null, sending: false, rid: null, maxDay: null };
 
   function show(id) { ["vLoading", "vBook", "vDone", "vStatus", "vMsg"].forEach(function (v) { $(v).hidden = v !== id; }); window.scrollTo(0, 0); }
@@ -285,6 +287,15 @@ button{font:inherit;color:inherit}
     });
     updateBar();
     show("vBook");
+    if (pre.look || pre.who) {
+      $("prefill").textContent = T("fromPhoto") + (pre.look ? ": " + pre.look : "") + (pre.who ? " (" + T("fromPhotoWho") + " " + pre.who + ")" : "");
+      $("prefill").hidden = false;
+    }
+    if (pre.svc) {
+      var hit = S.page.services.filter(function (v) { return String(v.id).toLowerCase() === pre.svc; })[0];
+      var inp = hit && document.querySelector('#svcList input[value="' + hit.id + '"]');
+      if (inp) { inp.checked = true; pickService(hit); }
+    }
   }
 
   // ── 시술 → 날짜 ──
@@ -406,8 +417,8 @@ button{font:inherit;color:inherit}
     var rwg = C.rwgFor(document.cookie, S.page.store.entity_id);
     rpc("public_booking_create", {
       p_slug: entry.slug, p_service_id: S.svc.id, p_start_local: S.day + " " + S.time,
-      p_name: f.name.trim(), p_phone: f.phone, p_note: f.note.trim() || null, p_request_id: S.rid,
-      p_attribution: rwg ? { rwg_token: rwg, channel: "google" } : null
+      p_name: f.name.trim(), p_phone: f.phone, p_note: C.prefillNote(pre, f.note, lang), p_request_id: S.rid,
+      p_attribution: rwg ? { rwg_token: rwg, channel: "google" } : (pre.look || pre.svc ? { channel: "portfolio" } : null)
     }).then(function (r) {
       S.sending = false;
       if (!r || !r.ok) {

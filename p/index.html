@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="format-detection" content="telephone=no">
+<title>포트폴리오 — 오셔요</title>
+<meta name="description" content="매장 시술 사진을 보고 같은 스타일로 바로 예약하세요.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--bg:#F3F4F6;--card:#fff;--ink:#17191C;--sub:#4A5059;--mute:#6B727C;--line:#E6E8EB;--fill:#EEF0F2;--accent:#C4481A;--accent-ink:#9E3913}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink)}
+body{font-family:"Pretendard Variable","Pretendard",-apple-system,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;word-break:keep-all;-webkit-text-size-adjust:100%;line-height:1.5}
+main{max-width:640px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+[hidden]{display:none!important}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid #1D5FD1;outline-offset:2px}
+.head{padding:24px 20px 12px;display:flex;align-items:center;gap:12px}
+.head .t{flex:1;min-width:0}
+.head h1{margin:0;font-size:24px;font-weight:700;letter-spacing:-.02em}
+.head p{margin:4px 0 0;color:var(--sub);font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:12px;background:var(--accent);color:#fff;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
+.btn.sec{background:var(--fill);color:var(--ink)}
+.people{display:flex;gap:14px;overflow-x:auto;padding:4px 20px 12px}
+.people button{background:none;border:0;padding:0;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:60px;cursor:pointer}
+.people .av{width:52px;height:52px;border-radius:26px;background:var(--fill);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;border:2px solid var(--fill)}
+.people button[aria-pressed="true"] .av{border-color:var(--ink)}
+.people .nm{font-size:12px;color:var(--sub)} .people button[aria-pressed="true"] .nm{color:var(--ink);font-weight:700}
+.cats{display:flex;gap:6px;overflow-x:auto;padding:0 20px 12px;border-bottom:1px solid var(--line)}
+.cats button{flex-shrink:0;min-height:36px;padding:0 12px;border-radius:8px;border:0;background:var(--fill);font-size:13px;font-weight:500;cursor:pointer}
+.cats button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 10px;padding:16px 20px}
+@media (min-width:560px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.card{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;background:none;border:0;padding:0;text-align:left;cursor:pointer}
+.card .ph{aspect-ratio:4/5;border-radius:12px;background:var(--fill);overflow:hidden}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.card .nm{font-size:14px;font-weight:600}
+.card .mt{font-size:12px;color:var(--sub)}
+.empty{padding:40px 24px;text-align:center;color:var(--mute);font-size:14px}
+.foot{margin-top:auto;padding:14px 20px 28px;border-top:1px solid var(--line);font-size:12px;color:var(--mute);line-height:1.55}
+.foot a{color:var(--accent-ink)}
+dialog{border:0;padding:0;border-radius:20px 20px 0 0;max-width:640px;width:100%;margin:auto auto 0;max-height:92dvh}
+dialog::backdrop{background:rgba(23,25,28,.45)}
+.dlg img{width:100%;max-height:60dvh;object-fit:contain;background:#111;display:block}
+.dlg .in{padding:16px 20px calc(20px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:10px}
+.dlg h2{margin:0;font-size:20px}
+.dlg .mt{color:var(--sub);font-size:14px}
+.dlg .tags{display:flex;flex-wrap:wrap;gap:6px}
+.dlg .tags span{font-size:12px;padding:3px 8px;border-radius:6px;background:var(--fill)}
+.dlg .x{position:absolute;right:10px;top:10px;width:44px;height:44px;border-radius:22px;border:0;background:rgba(23,25,28,.6);color:#fff;font-size:20px;cursor:pointer}
+.center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;gap:10px;color:var(--sub)}
+</style>
+</head>
+<body>
+<main>
+  <section id="vLoad" class="center"><p>불러오는 중이에요</p></section>
+  <section id="vMsg" class="center" hidden><h1 style="font-size:20px;color:var(--ink);margin:0">포트폴리오를 찾을 수 없어요</h1><p>주소를 확인하거나 매장에 문의해 주세요.</p></section>
+  <section id="vPage" hidden style="display:flex;flex-direction:column;flex:1">
+    <div class="head">
+      <div class="t"><h1 id="name"></h1><p id="meta"></p></div>
+      <a class="btn" id="bookTop" hidden>예약하기</a>
+    </div>
+    <div class="people" id="people" role="group" aria-label="디자이너"></div>
+    <div class="cats" id="cats" role="group" aria-label="시술"></div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>아직 올라온 사진이 없어요.</p>
+    <p class="foot">사진은 손님 동의를 받아 올렸고, 얼굴은 가렸어요. 사진 속 본인이라면 받은 문자 링크에서 바로 내리거나 매장에 말씀해 주세요. <a href="https://hellosangwoo-ctrl.github.io/vione-legal/privacy-policy.html" target="_blank" rel="noopener">개인정보 처리방침</a></p>
+  </section>
+</main>
+<dialog id="dlg" aria-labelledby="dName">
+  <div class="dlg" style="position:relative">
+    <button class="x" id="dClose" aria-label="닫기">×</button>
+    <img id="dImg" alt="">
+    <div class="in">
+      <h2 id="dName"></h2>
+      <div class="mt" id="dMeta"></div>
+      <div class="tags" id="dTags"></div>
+      <a class="btn" id="dBook">이 스타일로 예약</a>
+      <a class="btn sec" id="dCall" hidden>전화로 예약</a>
+    </div>
+  </div>
+</dialog>
+<script src="/p/look-core.js"></script>
+<script>
+(function () {
+  "use strict";
+  var L = window.LookCore;
+  var SUPABASE_URL = "https://awnumaschuictuclucmt.supabase.co";
+  var SUPABASE_KEY = "sb_publishable_JPdIb72UcP7lZfmOtFXflg_GFMh_0tT"; // 공개용 키. 이 페이지가 부르는 것은 public_portfolio 하나
+  var $ = function (id) { return document.getElementById(id); };
+  var slug = L.parseSlug(location.href);
+  var D = null, S = { who: null, svc: null };
+
+  function show(id) { ["vLoad", "vMsg", "vPage"].forEach(function (v) { $(v).hidden = v !== id; }); }
+  function tel(p) { return "tel:" + String(p).replace(/[^0-9+]/g, ""); }
+
+  function rpc(fn, args) {
+    return fetch(SUPABASE_URL + "/rest/v1/rpc/" + fn, {
+      method: "POST", headers: { apikey: SUPABASE_KEY, authorization: "Bearer " + SUPABASE_KEY, "content-type": "application/json" },
+      body: JSON.stringify(args)
+    }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+  }
+
+  function chip(box, label, pressed, onClick, cls) {
+    var b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-pressed", String(pressed));
+    if (cls === "person") {
+      var av = document.createElement("span"); av.className = "av"; av.textContent = label.slice(0, 1);
+      var nm = document.createElement("span"); nm.className = "nm"; nm.textContent = label;
+      b.appendChild(av); b.appendChild(nm);
+    } else b.textContent = label;
+    b.addEventListener("click", onClick); box.appendChild(b);
+  }
+
+  function render() {
+    var st = D.store;
+    document.title = st.name + " 포트폴리오 — 오셔요";
+    $("name").textContent = st.name;
+    $("meta").textContent = [st.address, st.hours].filter(Boolean).join(", ");
+    if (st.booking) { $("bookTop").href = "/b/" + st.slug; $("bookTop").hidden = false; }
+    else if (st.phone) { $("bookTop").href = tel(st.phone); $("bookTop").textContent = "전화하기"; $("bookTop").hidden = false; }
+
+    var pp = $("people"); pp.innerHTML = "";
+    if ((D.staff || []).length > 1) {
+      chip(pp, "전체", !S.who, function () { S.who = null; render(); }, "person");
+      D.staff.forEach(function (s) { chip(pp, s.name, S.who === s.id, function () { S.who = s.id; render(); }, "person"); });
+    } else pp.hidden = true;
+    var cs = $("cats"); cs.innerHTML = "";
+    var names = L.serviceNames(D.items);
+    if (names.length > 1) {
+      chip(cs, "전체", !S.svc, function () { S.svc = null; render(); });
+      names.forEach(function (n) { chip(cs, n, S.svc === n, function () { S.svc = n; render(); }); });
+    } else cs.hidden = true;
+
+    var items = L.filterItems(D.items, S.who, S.svc), g = $("grid"); g.innerHTML = "";
+    $("empty").hidden = items.length > 0;
+    items.forEach(function (it) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "card";
+      var ph = document.createElement("div"); ph.className = "ph";
+      var im = document.createElement("img"); im.loading = "lazy"; im.alt = it.service_name || "시술 사진"; im.src = L.publicUrl(SUPABASE_URL, it.public_path);
+      ph.appendChild(im);
+      var nm = document.createElement("span"); nm.className = "nm"; nm.textContent = it.service_name || "시술";
+      var mt = document.createElement("span"); mt.className = "mt";
+      mt.textContent = [L.staffName(D.staff, it.staff_id), L.fmtWon(it.price_from)].filter(Boolean).join(", ");
+      b.appendChild(ph); b.appendChild(nm); b.appendChild(mt);
+      b.addEventListener("click", function () { open(it); });
+      g.appendChild(b);
+    });
+    show("vPage");
+  }
+
+  function open(it) {
+    var st = D.store, who = L.staffName(D.staff, it.staff_id);
+    $("dImg").src = L.publicUrl(SUPABASE_URL, it.public_path); $("dImg").alt = it.service_name || "시술 사진";
+    $("dName").textContent = it.service_name || "시술";
+    $("dMeta").textContent = [who, it.duration_min ? "약 " + it.duration_min + "분" : null, L.fmtWon(it.price_from)].filter(Boolean).join(", ");
+    var tg = $("dTags"); tg.innerHTML = "";
+    (it.tags || []).forEach(function (t) { var s = document.createElement("span"); s.textContent = L.tagLabel(t); tg.appendChild(s); });
+    var href = st.booking ? L.bookHref(st.slug, it, who) : null;
+    $("dBook").hidden = !href; if (href) { $("dBook").href = href; $("dBook").textContent = who ? "이 스타일로 " + who + "에게 예약" : "이 스타일로 예약"; }
+    $("dCall").hidden = !!href || !st.phone; if (st.phone) $("dCall").href = tel(st.phone);
+    $("dlg").showModal();
+  }
+  $("dClose").addEventListener("click", function () { $("dlg").close(); });
+  $("dlg").addEventListener("click", function (e) { if (e.target === $("dlg")) $("dlg").close(); });
+
+  if (!slug) { show("vMsg"); return; }
+  rpc("public_portfolio", { p_slug: slug }).then(function (d) {
+    if (!d || !d.store) { show("vMsg"); return; }
+    D = d; render();
+  }).catch(function () { show("vMsg"); });
+})();
+</script>
+</body>
+</html>

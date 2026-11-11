@@ -181,7 +181,8 @@
       e_bad_phone: "휴대폰 번호를 확인해 주세요", e_bad_name: "이름을 확인해 주세요",
       e_service_not_found: "선택한 시술을 지금은 예약할 수 없어요.", e_not_found: "예약을 찾을 수 없어요. 번호를 확인해 주세요.",
       e_generic: "예약하지 못했어요. 잠시 후 다시 시도해 주세요.",
-      poweredBy: "오셔요 예약", minutes: "소요"
+      poweredBy: "오셔요 예약", minutes: "소요",
+      fromPhoto: "사진 보고 예약해요", fromPhotoWho: "희망 디자이너"
     },
     en: {
       loading: "Loading…", pickService: "Choose a service", pickTime: "Choose a date and time",
@@ -207,9 +208,29 @@
       e_bad_phone: "Check your mobile number", e_bad_name: "Check your name",
       e_service_not_found: "That service can't be booked right now.", e_not_found: "Booking not found. Check the code and digits.",
       e_generic: "Couldn't book. Please try again shortly.",
-      poweredBy: "Booked with OSEYO", minutes: "Duration"
+      poweredBy: "Booked with OSEYO", minutes: "Duration",
+      fromPhoto: "Booking from a photo", fromPhotoWho: "Preferred stylist"
     }
   };
+  // ── 사진 보고 예약(/p/ 포트폴리오, /t/ 감사 페이지에서 들어옴, 2026-11-11) ──
+  //  ?svc=<시술 uuid>&look=<사진 설명>&who=<디자이너 이름>
+  var UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  function clean(s, n) { return String(s == null ? "" : s).replace(/[\u0000-\u001f<>|]/g, " ").replace(/\s+/g, " ").trim().slice(0, n); }
+  function parsePrefill(href) {
+    var q; try { q = new URL(href).searchParams; } catch (e) { return { svc: null, look: "", who: "" }; }
+    var svc = (q.get("svc") || "").trim();
+    return { svc: UUID_RE.test(svc) ? svc.toLowerCase() : null, look: clean(q.get("look"), 30), who: clean(q.get("who"), 20) };
+  }
+  // 원장님이 예약 메모에서 보는 줄. 손님 메모와 합쳐 200자 안.
+  function prefillNote(pre, userNote, lang) {
+    var bits = [];
+    if (pre && pre.look) bits.push((lang === "ko" ? "사진 보고 예약: " : "Booked from photo: ") + pre.look);
+    if (pre && pre.who) bits.push((lang === "ko" ? "희망 디자이너 " : "Preferred stylist ") + pre.who);
+    var head = bits.join(", "), u = String(userNote || "").trim();
+    var out = head && u ? head + " / " + u : (head || u);
+    return out ? out.slice(0, 200) : null;
+  }
+
   function pickLang(navLangs) {
     var l = (navLangs && navLangs[0]) || "ko";
     return /^ko/i.test(l) ? "ko" : "en";
@@ -222,7 +243,7 @@
     validateForm: validateForm, requestId: requestId, rwgCookies: rwgCookies, readCookie: readCookie, rwgFor: rwgFor,
     conversionBody: conversionBody, addDays: addDays, weekday: weekday, todayIn: todayIn, dayStrip: dayStrip,
     groupTimes: groupTimes, fmtPrice: fmtPrice, fmtDuration: fmtDuration, fmtWhen: fmtWhen, pickLang: pickLang,
-    t: t, errorText: errorText, DOW: DOW, SLUG_RE: SLUG_RE, REF_RE: REF_RE, STR: STR
+    t: t, errorText: errorText, parsePrefill: parsePrefill, prefillNote: prefillNote, DOW: DOW, SLUG_RE: SLUG_RE, REF_RE: REF_RE, STR: STR
   };
   if (typeof module === "object" && module.exports) module.exports = api;
   else root.BookingCore = api;

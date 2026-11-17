@@ -79,7 +79,7 @@ const head = ({ title, description, url, type = 'article', jsonld }) => `<!docty
 const CTA = `<aside class="cta-box">
   <div class="k">오셔요</div>
   <h2>단골 손님이 계속 오실 수 있게.</h2>
-  <p>미용실·네일·속눈썹·왁싱 원장님을 위한 예약장부·고객차트 앱입니다. 손님마다 다른 재방문 주기를 기억해 뜸해진 손님을 먼저 알려드리고, 예약 확인 문자로 노쇼를 줄입니다. Starter는 무료로 시작할 수 있습니다.</p>
+  <p>안 오는 단골을 알려 주고 다시 오게 하는 앱입니다. 미용실·네일·속눈썹·왁싱 원장님의 손님마다 다른 재방문 주기를 기억해 뜸해진 손님을 먼저 알려드리고, 그 손님에게 맞는 안부 문자를 준비해 드립니다. 예약장부·고객차트와 예약 확인 문자도 한 앱에 있고, Starter는 무료로 시작할 수 있습니다.</p>
   <div class="btns"><a class="btn w" href="${APP_STORE}">App Store</a><a class="btn o" href="${PLAY}">Google Play</a></div>
 </aside>`;
 
